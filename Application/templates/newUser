@@ -1,0 +1,99 @@
+
+{% extends "base" %}
+
+<title> {% block title %} Create User {% endblock %} </title>
+
+<main>
+
+  {% block content %}
+
+    <section class="vh-100">
+        <div class="container py-5 h-100">
+          <div class="row d-flex justify-content-center align-items-center h-100" style="opacity:100%; color:#393f81;">
+            <div class="col col-xl-10">
+              <div class="card" 
+              style="
+              border:rgb(0, 15, 245) solid 1px;
+              border-radius: 1.5rem;
+              box-shadow: 0px 5px 6px 0px rgb(9, 17, 83);
+              ">
+                <div class="row g-0">
+                  <div class="col-md-6 col-lg-5 d-none d-md-block">
+                    <img src={{image}};
+                      alt="sign up form" 
+                      class="img-fluid" 
+                      style="
+                      border-radius: 1rem 0 0 1rem;
+                      margin: 0.5rem 0.5rem 0.5rem 0.5rem;
+                      object-fit: cover;
+                      object-position: 74% 0;
+                      height:97.5%;
+                      ">
+                  </div>
+                  <div class="col-md-6 col-lg-7 d-flex align-items-center">
+                    <div class="card-body p-4 p-lg-5 text-black">
+      
+                      <form method="POST" action="/newuser">
+      
+                        <div class="d-flex align-items-center mb-3 pb-1">
+                          <i class="fas fa-cubes fa-2x me-3">
+                          </i>
+                          <span class="h1 fw-bold mb-0 title" style="
+                          color: rgb(0, 15, 245);
+                          ">
+                          Project Athena
+                        </span>                           
+                        </div>
+      
+                        <h5 class="fw-normal mb-3 pb-3 title" style="letter-spacing: 1px; color: rgb(0, 15, 245);">
+                        Register a new account</h5>
+      
+                        <div class ="row">
+                            <div class="col-md-6 field">
+                                <div class="form-outline mb-4">
+                                    <input type="type" id="firstname" name="firstname" class="form-control form-control-lg"  />
+                                    <label class="form-label small text-muted" for="firstname">First name</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6 field">
+                                <div class="form-outline mb-4">
+                                    <input type="type" id="lastname" name="lastname" class="form-control form-control-lg"  />
+                                    <label class="form-label small text-muted" for="lastname">Last name</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-outline mb-4 field">
+                            <input type="email" id="email" name="email" class="form-control form-control-lg" />
+                            <label class="form-label small text-muted" for="email">Enter Email</label>
+                        </div>
+                        <div class="form-outline mb-4">
+                            <input type="password" id="pword" name="pword" class="form-control form-control-lg" />
+                            <label class="form-label small text-muted" for="pword">Enter Password</label>
+                        </div>
+                        
+                        <div class="pt-1 mb-4">
+                          <button class="btn btn-dark btn-lg btn-block" 
+                          type="button submit" 
+                          style="
+                          background-color:rgb(0, 15, 245);
+                          background-image: linear-gradient(-1deg, transparent 49%, rgba(255, 255, 255, 0.15) 50%, rgba(225, 225, 225, 0));
+                          ">
+                          Register
+                          </button>
+                        </div>
+                        
+                        <p class="mb-5 pb-lg-2"> Already have an account? 
+                          <a class="title" href="/"> Sign in here </a></p>
+                        <a href="#!" class="small text-muted"> Terms of use. </a>
+                        <a href="#!" class="small text-muted"> Privacy policy </a>
+                      </form>
+      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+{% endblock %}

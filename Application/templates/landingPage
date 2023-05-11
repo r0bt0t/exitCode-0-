@@ -1,0 +1,43 @@
+
+{% extends "base" %}
+
+    <title> {% block title %} Athena Home {% endblock %} </title>
+
+<body>
+    <header>
+        <div class="pos-f-t">
+            <div class="collapse" id="navbarToggleExternalContent">
+              <div class="bg-light p-4">
+                <h4 class="text-black">Collapsed content</h4>
+                <span class="text-muted">Toggleable via the navbar brand.</span>
+              </div>
+            </div>
+            <nav class="navbar navbar-light bg-light">
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler material-symbols-outlined">menu</span>
+              </button>
+            </nav>
+          </div> 
+    </header>
+
+    <main>
+
+      {% block content %}
+
+        <div class="container col-xxl-8 px-4 py-5" style="height:100vh">
+            <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+            <div class="col-10 col-sm-8 col-lg-6">
+                <img src="https://images.metadata.sky.com/pd-image/00b29bf0-ccf9-4c42-b751-7de26283e9c7/16-9/600" class="d-block mx-lg-auto img-fluid" alt="Formula 1 Ad" width="700" height="500" loading="lazy">
+            </div>
+            <div class="col-lg-6">
+                <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3 title"> Welcome back {{name}} </h1>
+                <p class="lead"> It's great to see you again.<br> What are you looking for today? <br> Do you need some advice on a specific topic, or are you simply looking around for something of interest? <br> Maybe you just need reminding of how Athena works. <br> If so, hit the <i> 'Take the tour' </i> button below. <br> If you're all business today then the <i> 'Let's get started' </i> button is the right choice for you </p>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                <button type="button" class="btn btn-primary btn-lg px-4 me-md-2 gappedR"> Let's get started </button>
+                <button type="button" class="btn btn-outline-secondary btn-lg px-4 gappedL"> Take the tour </button>
+                </div>
+            </div>
+            </div>
+        </div>
+      {% endblock %}  
+    </main>
