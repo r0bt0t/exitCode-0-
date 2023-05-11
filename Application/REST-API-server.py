@@ -1,6 +1,9 @@
 from flask import Flask, render_template, request, flash, redirect, url_for
 import mysql.connector
 import random
+from flask_wtf import FlaskForm
+from wtforms import PasswordField, validators
+
 
 dbLogin = mysql.connector.connect(
         host="localhost",
@@ -13,6 +16,14 @@ mycursor = dbLogin.cursor()
 
 app = Flask(__name__)
 app.secret_key = 'exit_code_zero'
+
+class SignupForm(FlaskForm):
+    pword = PasswordField('password', [
+        validators.Length(min=8, message="Password must be at least 8 characters long"),
+        validators.Regexp(regex=".*[A-Z].*", message="Password must contain at least one uppercase letter"),
+        validators.Regexp(regex=".*\d.*", message="Password must contain at least one digit"),
+        validators.Regexp(regex=".*[!@#$%^&*()].*", message="Password must contain at least one special character")
+    ])
 
 @app.route("/")
 def homePage():
@@ -38,24 +49,6 @@ def homePage():
     image = random.choice(imageList)
     return render_template("login", image = image)
 
-@app.route("/newuser", methods=["POST"])
-def created_user():
-    fname = request.form["firstname"]
-    lname = request.form["lastname"]
-    email = request.form["email"]
-    password = request.form["pword"]
-    sqlAddUserQuery = "insert into users2 (first_name, last_name, email, password) values (%s, %s, %s, %s);"
-    mycursor.execute(sqlAddUserQuery, (fname, lname, email, password))
-    dbLogin.commit()
-
-    sqlFindUserQuery = "SELECT user_name FROM users2 WHERE last_name = %s AND email = %s AND password = %s"
-    mycursor.execute(sqlFindUserQuery, (lname, email, password))
-    name = mycursor.fetchone()[0]
-
-    flash(f'Account created successfully! Your user ID is: {name}', 'success')
-
-    return redirect(url_for("homePage"))
-
 @app.route("/landing")
 def landingPage():
     return render_template("landingPage")
@@ -68,6 +61,30 @@ def landing():
     mycursor.execute(sqlCheckQuery, (uName, password))
     name = mycursor.fetchone()[0]
     return render_template("landingPage", name=name)
+
+@app.route("/newuser", methods=["POST"])
+def created_user():
+    form = SignupForm()
+    fname = request.form["firstname"]
+    lname = request.form["lastname"]
+    email = request.form["email"]
+    password = request.form["pword"]
+
+    if not form.pword.validate(password):
+        flash(f'Invalid password: <br>' + ', '.join(form.pword.errors), 'error')
+        return redirect(url_for("sign_up"))
+    
+    sqlAddUserQuery = "insert into users2 (first_name, last_name, email, password) values (%s, %s, %s, %s);"
+    mycursor.execute(sqlAddUserQuery, (fname, lname, email, password))
+    dbLogin.commit()
+
+    sqlFindUserQuery = "SELECT user_name FROM users2 WHERE last_name = %s AND email = %s AND password = %s"
+    mycursor.execute(sqlFindUserQuery, (lname, email, password))
+    name = mycursor.fetchone()[0]
+    
+    flash(f'Account created successfully! Your user ID is: <b> {name} </b>', 'success')
+
+    return redirect(url_for("homePage"))
 
 @app.route("/newuser")
 def sign_up():

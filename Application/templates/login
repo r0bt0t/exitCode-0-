@@ -1,6 +1,7 @@
 
 {% extends "base" %}
 
+
 <title> {% block title %} Login page {% endblock %} </title>
 
 <main>
@@ -18,8 +19,9 @@
             <div>
               {{ message }}
             </div>
-            <button type="button" class="btn-close bi bi-x-lg" data-bs-dismiss="alert" aria-label="Close"></button>
+            <button type="button" class="btn-close bi bi-x-lg" data-bs-dismiss="alert" aria-label="Close">Close</button>
           </div>
+        </ul>
           {% endfor %}
       {% endif %}
     {% endwith %}

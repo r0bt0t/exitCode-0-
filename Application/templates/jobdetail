@@ -3,23 +3,6 @@
 
     <title> {% block title %} Athena Home {% endblock %} </title>
 
-<body>
-    <header>
-        <div class="pos-f-t">
-            <div class="collapse" id="navbarToggleExternalContent">
-              <div class="bg-light p-4">
-                <h4 class="text-black">Collapsed content</h4>
-                <span class="text-muted">Toggleable via the navbar brand.</span>
-              </div>
-            </div>
-            <nav class="navbar navbar-light bg-light">
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler material-symbols-outlined">menu</span>
-              </button>
-            </nav>
-          </div> 
-    </header>
-
     <main>
 
       {% block content %}

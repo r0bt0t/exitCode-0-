@@ -7,6 +7,24 @@
 
   {% block content %}
 
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class="flashes">
+      {% for message in messages %}
+      <div class="alert alert-primary d-flex align-items-center w-25 p-3" role="alert">
+        <button type="button" class="btn-close bi bi-x-lg" data-bs-dismiss="alert" aria-label="Close"></button>
+        <svg xmlns="http://www.w3.org/2000/svg" width="auto" height="64" fill="rgb(33, 66, 156)" class="bi bi-check-lg" viewBox="0 0 25 25">
+          <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
+        </svg>
+        <div>
+          {{ message }}
+        </div>
+      </div>
+    </ul>
+      {% endfor %}
+  {% endif %}
+{% endwith %}
+
     <section class="vh-100">
         <div class="container py-5 h-100">
           <div class="row d-flex justify-content-center align-items-center h-100" style="opacity:100%; color:#393f81;">
@@ -33,7 +51,7 @@
                   <div class="col-md-6 col-lg-7 d-flex align-items-center">
                     <div class="card-body p-4 p-lg-5 text-black">
       
-                      <form method="POST" action="/newuser">
+                      <form class="FlaskForm" method="POST" action="/newuser">
       
                         <div class="d-flex align-items-center mb-3 pb-1">
                           <i class="fas fa-cubes fa-2x me-3">
@@ -68,7 +86,9 @@
                         </div>
                         <div class="form-outline mb-4">
                             <input type="password" id="pword" name="pword" class="form-control form-control-lg" required />
-                            <label class="form-label small text-muted" for="pword">Enter Password</label>
+                            <label  class="form-label text-muted" for="pword">Enter Password <br>
+                              <small class="text-muted"> Eight characters min, including capital letter, number, and special character(s) </small> 
+                            </label>
                         </div>
                         
                         <div class="pt-1 mb-4">
