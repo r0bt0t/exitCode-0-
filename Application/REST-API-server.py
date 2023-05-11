@@ -97,5 +97,13 @@ def sign_up():
 def job_list():
     return render_template("jobsummary")
 
+@app.route("/jobdetail", methods=["GET","POST"])
+def job_detail():
+    return render_template("jobdetail")
+
+@app.route("/knowledgebase", methods=["GET","POST"])
+def knowledge_base():
+    return render_template("knowledgebase")
+
 
 app.run(debug=True)

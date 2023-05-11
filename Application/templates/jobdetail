@@ -26,20 +26,20 @@
 
         <div class="container col-xxl-8 px-4 py-5" style="height:100vh">
             <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
-            <div class="col-10 col-sm-8 col-lg-6">
-                <img src="https://images.metadata.sky.com/pd-image/00b29bf0-ccf9-4c42-b751-7de26283e9c7/16-9/600" class="d-block mx-lg-auto img-fluid" alt="Formula 1 Ad" width="700" height="500" loading="lazy">
-            </div>
-            <div class="col-lg-6">
-                <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3 title"> Welcome back {{name}} </h1>
-                <p class="lead"> Your jobs for the day are ready when you are. 
-                  <br>
-                  Click the link below to get started
-                </p>
-                <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-                <button type="button" class="btn btn-primary btn-lg px-4 me-md-2 gappedR"> <a href="{{ url_for('job_list')}}"> GO TO JOBS </a> </button>
-                <button type="button" class="btn btn-outline-secondary btn-lg px-4 gappedL"> <a href="{{ url_for('knowledge_base')}}"> KNOWLEDGE ZONE </a> </button>
-                </div>
-            </div>
+                <div class="col-lg-6">
+                    <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3 title"> Job detail for ref:  </h1>
+                    <p class="lead"> BB Service Visit 
+                      <br>
+                      Whatever the issue, when you're on a service visit you cannot diagnose any issues unless you know the line and hub are good
+                    </p>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                    <button type="button" class="btn btn-primary btn-lg px-4 me-md-2 gappedR"> <a href="{{ url_for('landing')}}"> Back to Profile </a> </button>
+                    <button type="button" class="btn btn-outline-secondary btn-lg px-4 gappedL"> KNOWLEDGE ZONE </button>
+                    </div>
+                </div
+                <div class="col-10 col-sm-8 col-lg-6">
+                    <img src="https://images.metadata.sky.com/pd-image/00b29bf0-ccf9-4c42-b751-7de26283e9c7/16-9/600" class="d-block mx-lg-auto img-fluid" alt="Formula 1 Ad" width="700" height="500" loading="lazy">
+                </div>>
             </div>
         </div>
       {% endblock %}  

@@ -22,7 +22,7 @@
             style="
             background-image: linear-gradient(-1deg, transparent 49%, rgba(255, 255, 255, 0.15) 50%, rgba(225, 225, 225, 0));
             ">
-            <a href="*"> Knowledge Bank </a> </button>
+            <a href="/knowledgebase"> Knowledge Bank </a> </button>
           </div>
         </div>
         <div style="max-height: 100vh;">
@@ -43,7 +43,7 @@
                         </thead>
         
                             <tr>
-                                <td id="job1" scope="col" class="col" style="text-align:center"> </td>
+                                <td id="job1" scope="col" class="col" style="text-align:center"> <a href="{{ url_for('job_detail')}}"> EXAMPLE LINK </a> </td>
                                 <td id="type1"  scope="col" class="col" style="text-align:center"> </td>
                                 <td id="cust1"  scope="col" class="col" style="text-align:center"> </td>
                                 <td id="address1"  scope="col" class="col" style="text-align:center"> </td>
