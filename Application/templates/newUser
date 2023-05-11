@@ -51,23 +51,23 @@
                         <div class ="row">
                             <div class="col-md-6 field">
                                 <div class="form-outline mb-4">
-                                    <input type="type" id="firstname" name="firstname" class="form-control form-control-lg"  />
+                                    <input type="type" id="firstname" name="firstname" class="form-control form-control-lg" required  />
                                     <label class="form-label small text-muted" for="firstname">First name</label>
                                 </div>
                             </div>
                             <div class="col-md-6 field">
                                 <div class="form-outline mb-4">
-                                    <input type="type" id="lastname" name="lastname" class="form-control form-control-lg"  />
+                                    <input type="type" id="lastname" name="lastname" class="form-control form-control-lg" required  />
                                     <label class="form-label small text-muted" for="lastname">Last name</label>
                                 </div>
                             </div>
                         </div>
                         <div class="form-outline mb-4 field">
-                            <input type="email" id="email" name="email" class="form-control form-control-lg" />
+                            <input type="email" id="email" name="email" class="form-control form-control-lg" required />
                             <label class="form-label small text-muted" for="email">Enter Email</label>
                         </div>
                         <div class="form-outline mb-4">
-                            <input type="password" id="pword" name="pword" class="form-control form-control-lg" />
+                            <input type="password" id="pword" name="pword" class="form-control form-control-lg" required />
                             <label class="form-label small text-muted" for="pword">Enter Password</label>
                         </div>
                         

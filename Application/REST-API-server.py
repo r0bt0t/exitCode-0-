@@ -56,7 +56,6 @@ def created_user():
 
     return redirect(url_for("homePage"))
 
-
 @app.route("/landing")
 def landingPage():
     return render_template("landingPage")
@@ -93,6 +92,10 @@ def sign_up():
     ]
     image = random.choice(imageList)
     return render_template("newUser", image = image)
+
+@app.route("/jobsummary", methods=["GET","POST"])
+def job_list():
+    return render_template("jobsummary")
 
 
 app.run(debug=True)

@@ -7,15 +7,23 @@
 
   {% block content %}
 
-    {% with messages = get_flashed_messages() %}
+  {% with messages = get_flashed_messages() %}
       {% if messages %}
         <ul class="flashes">
           {% for message in messages %}
-            <li>{{ message }}</li>
+          <div class="alert alert-primary d-flex align-items-center w-25 p-3" role="alert">
+            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="rgb(33, 66, 156)" class="bi bi-check-lg" viewBox="0 0 16 16">
+              <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
+            </svg>
+            <div>
+              {{ message }}
+            </div>
+            <button type="button" class="btn-close bi bi-x-lg" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
           {% endfor %}
-        </ul>
       {% endif %}
     {% endwith %}
+          
 
     <section class="vh-100">
         <div class="container py-5 h-100">
@@ -60,12 +68,12 @@
                           Sign into your account</h5>
       
                         <div class="form-outline mb-4 field">
-                          <input type="text" id="uName" name="uName" class="form-control form-control-lg"  />
+                          <input type="text" id="uName" name="uName" class="form-control form-control-lg" required />
                           <label class="form-label small text-muted" for="uName">Enter User Name</label>
                         </div>
       
                         <div class="form-outline mb-4 field">
-                          <input type="password" id="password" name="password" class="form-control form-control-lg" />
+                          <input type="password" id="password" name="password" class="form-control form-control-lg" required />
                           <label class="form-label small text-muted" for="password">Enter Password</label>
                         </div>
                         

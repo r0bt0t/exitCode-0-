@@ -31,10 +31,13 @@
             </div>
             <div class="col-lg-6">
                 <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3 title"> Welcome back {{name}} </h1>
-                <p class="lead"> It's great to see you again.<br> What are you looking for today? <br> Do you need some advice on a specific topic, or are you simply looking around for something of interest? <br> Maybe you just need reminding of how Athena works. <br> If so, hit the <i> 'Take the tour' </i> button below. <br> If you're all business today then the <i> 'Let's get started' </i> button is the right choice for you </p>
+                <p class="lead"> Your jobs for the day are ready when you are. 
+                  <br>
+                  Click the link below to get started
+                </p>
                 <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-                <button type="button" class="btn btn-primary btn-lg px-4 me-md-2 gappedR"> Let's get started </button>
-                <button type="button" class="btn btn-outline-secondary btn-lg px-4 gappedL"> Take the tour </button>
+                <button type="button" class="btn btn-primary btn-lg px-4 me-md-2 gappedR"> <a href="{{ url_for('job_list')}}"> GO TO JOBS </a> </button>
+                <button type="button" class="btn btn-outline-secondary btn-lg px-4 gappedL"> KNOWLEDGE ZONE </button>
                 </div>
             </div>
             </div>
