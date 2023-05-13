@@ -1,7 +1,7 @@
 
 {% extends "base" %}
 
-    <title> {% block title %} Athena Home {% endblock %} </title>
+    <title> {% block title %} Job Detail {% endblock %} </title>
 
     <main>
 
@@ -16,7 +16,7 @@
                       Whatever the issue, when you're on a service visit you cannot diagnose any issues unless you know the line and hub are good
                     </p>
                     <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-                    <button type="button" class="btn btn-primary btn-lg px-4 me-md-2 gappedR"> <a href="{{ url_for('landing')}}"> Back to Profile </a> </button>
+                    <button type="button" class="btn btn-primary btn-lg px-4 me-md-2 gappedR"> <a href="{{ url_for('landingPage') }}"> Back to Profile </a> </button>
                     <button type="button" class="btn btn-outline-secondary btn-lg px-4 gappedL"> KNOWLEDGE ZONE </button>
                     </div>
                 </div
