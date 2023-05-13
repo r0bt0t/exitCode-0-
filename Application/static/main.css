@@ -19,37 +19,13 @@ body, html {
   color: #777;
 }
 
-.pulse {
-  animation: pulse 3s;
-}
-
-@keyframes pulse {
-  0% {
-    font-variation-settings: 'wght' 100;
-  }
-  50% {
-    font-variation-settings: 'wght' 500;
-  }
-  75% {
-    font-variation-settings: 'wght' 100;
-  }
-  90% {
-    font-variation-settings: 'wght' 300;
-  }
-  100% {
-    font-variation-settings: 'wght' 500;
-  }
-}
-
-#navbar {
-    display: block;
-    background-image:linear-gradient(to right, rgb(255, 158, 0) 0%, rgb(255, 0, 0) 25%, rgb(181, 0, 125) 50%, rgb(33, 66, 156) 75%, rgb(0, 113, 255) 100%);
-    color:rgb(255, 255, 255);
-    padding: 0.25em;
+button {
+  background-image: linear-gradient(-1deg, transparent 49%, rgba(255, 255, 255, 0.15) 50%, rgba(225, 225, 225, 0));
 }
 
 .material-symbols-outlined {
-  font-size: 200%;
+  font-size: 800%;
+  color:rgb(33, 66, 156);
 }
 
 .centered {
@@ -63,13 +39,6 @@ body, html {
   position: relative;
   top: 50%;
   left: 25%;
-}
-
-.headline {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-100%, -100%);
 }
 
 .foot {
@@ -92,6 +61,10 @@ a, a:link, a:visited, a:hover, a:active {
 
 .gappedL {
   margin-left: 10px;
+}
+
+.gappedT {
+  margin-top: 10px;
 }
 
 .flashes {

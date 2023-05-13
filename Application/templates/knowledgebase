@@ -1,29 +1,79 @@
 
 {% extends "base" %}
 
-    <title> {% block title %} Athena Home {% endblock %} </title>
+    <title> {% block title %} Knowledge Base {% endblock %} </title>
 
     <main>
 
       {% block content %}
 
-        <div class="container col-xxl-8 px-4 py-5" style="height:100vh">
-            <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
-                <div class="col-lg-6">
-                    <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3 title"> Welcome to the <b> Knowledge Bank </b> </h1>
-                    <p class="lead"> BB Service Visit 
-                      <br>
-                        Your one stop shop for all the info you need to do your job
-                    </p>
-                    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-                    <button type="button" class="btn btn-primary btn-lg px-4 me-md-2 gappedR"> <a href="{{ url_for('landing')}}"> Back to Profile </a> </button>
-                    <button type="button" class="btn btn-outline-secondary btn-lg px-4 gappedL"> KNOWLEDGE ZONE </button>
-                    </div>
-                </div
-                <div class="col-10 col-sm-8 col-lg-6">
-                    <img src="https://images.metadata.sky.com/pd-image/00b29bf0-ccf9-4c42-b751-7de26283e9c7/16-9/600" class="d-block mx-lg-auto img-fluid" alt="Formula 1 Ad" width="700" height="500" loading="lazy">
-                </div>>
-            </div>
+      <div class="container-fluid">
+        <div class="row justify-content-center d-flex align-items-center h-100">
+          <div class="col-lg-6">
+            <center> 
+              <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3 title" style="margin-top:20px"> We want you to always be at your best </h1>
+                <p class="lead"> The best way we know of supporting you with that is to help you to be well informed. If you ever feel stuck please search through our helpful links below and see if you can find the answers you need
+                </p>
+            </center>
         </div>
+        <div class="row g-0 d-flex justify-content-center align-items-center h-100">
+          <div class="col-sm-3 kb-column">
+            <img src="{{url_for('static', filename='img8.jpg')}}" 
+            class="img-fluid"
+            style="
+              border-radius: 1rem 0 0 1rem;
+              margin: 0.5rem 0.5rem 0.5rem 0.5rem;
+              height: 100%;
+              width: auto;
+              object-fit: cover;
+              object-position: 83% 0;
+              height:97.5%;" />
+          </div>
+          <div class="col-sm-3 kb-column">
+            <img src="{{url_for('static', filename='img11.avif')}}" 
+            class="img-fluid"
+            style="
+              border-radius: 1rem 0 0 1rem;
+              margin: 0.5rem 0.5rem 0.5rem 0.5rem;
+              height: 100%;
+              width: auto;
+              object-fit: cover;
+              object-position: 83% 0;
+              height:97.5%;" />
+          </div>
+          <div class="col-sm-3 kb-column">
+            <img src="{{url_for('static', filename='img2.jpg')}}" 
+            class="img-fluid"
+            style="
+              border-radius: 1rem 0 0 1rem;
+              margin: 0.5rem 0.5rem 0.5rem 0.5rem;
+              height: 100%;
+              width: auto;
+              object-fit: cover;
+              object-position: 83% 0;
+              height:97.5%;" />
+          </div>
+          <div class="col-sm-3 kb-column">
+            <div class="card overflow-hidden" style="width:24%vw">
+              <div class="img-fluid view zoom mask">
+                <img class="card-img" src="{{url_for('static', filename='img14.jpg')}}" 
+                  style="
+                    border-radius: 1rem 0 0 1rem;
+                    margin: 0.5rem 0.5rem 0.5rem 0.5rem;
+                    height: 100%;
+                    object-fit:cover;
+                    object-position: 83% 0;
+                    height:97.5%;" alt="Card image" />
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {% endblock %}  
     </main>
