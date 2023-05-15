@@ -1,11 +1,8 @@
 
 {% extends "base" %}
 
-
     <title> {% block title %} Job Summary {% endblock %} </title>
-
-    <main>
-
+ 
     {% block content %}
 
     <div class="px-4 pt-5 my-5 text-center border-bottom">
@@ -38,54 +35,56 @@
                         background-image: linear-gradient(-1deg, transparent 49%, rgba(255, 255, 255, 0.15) 50%, rgba(225, 225, 225, 0));
                         ">
                         <a href="/knowledgebase"> 
-                            Knowledge Bank 
+                            KNOWLEDGE BANK 
                         </a> 
                     </button>
 
                 </div>
 
             </div>
+
     </div> 
-    <center>   
-    <div class="row container align-items-center table-responsive">
 
-        <div class="form-group">
-            <label for="datepicker">Select Date:</label>
-            <input type="text" class="form-control" id="datepicker" name="date" placeholder="Select Date">
-        </div>
-          
+    <center>
 
-            <table class="table table-striped table-bordered" style="width: 100%;">
+    <div class="row container align-items-center table-responsive mn-vw-100">
+
+        <table class="table table-striped table-bordered table-hover">
+            
+            <thead class="thead-dark">
+                <tr class="text-center">
+                    <th class="text-center"> Job Ref </th>
+                    <th class="text-center"> Job Type </th>
+                    <th class="text-center"> Time Slot </th>
+                    <th class="text-center"> Customer </th>
+                    <th class="text-center"> Address </th>
+                    <th class="text-center"> Postcode </th>
+                    <th class="text-center"> Complete </th>
+                </tr>
+            </thead>
+
+                {% for job in jobs %}
                 
-                <thead class="thead-dark">
-                    <tr style="vertical-align: center;">
-                        <th style="text-align:center"> Job Ref </th>
-                        <th style="text-align:center"> Job Type </th>
-                        <th style="text-align:center"> Time Slot </th>
-                        <th style="text-align:center"> Postcode </th>
-                        <th style="text-align:center"> Complete </th>
-                    </tr>
-                </thead>
-
-                    {% for job in jobs %}
-
-                    <tr>
-                        <td id="job" style="text-align:center"> <a href="{{ url_for('job_detail') }}"> {{ job }} </a> </td>
-                        <td id="type1" style="text-align:center"> </td>
-                        <td id="time1" style="text-align:center"> </td>
-                        <td id="postcode1" style="text-align:center"> </td>
-                        <td id="complete1" style="text-align:center"> 
-                            {% if job %}
-                            <i class="bi bi-circle" style="font-size: 1rem; color:inherit;"></i>
-                            {% else: %}
-                            <i class="bi bi-check-circle-check-fill" style="font-size: 1rem; color:green;"></i>
-                            {% endif %}
-                        </td>
-                    </tr>
+                <tr>
                     
-                    {% endfor %}
+                    <td id="job" name="job" class="text-center"> <a method="POST" href="/jobdetail/{{job[1]}}"> <b> {{ job[1] }} </b> </a> </td>
+                    <td id="type" class="text-center"> <a method="POST" href="/jobdetail/{{job[1]}}"> <b> {{ job[2] }} </b> </a> </td>
+                    <td id="time" class="text-center"> <a method="POST" href="/jobdetail/{{job[1]}}"> <b> {{ job[4] }} </b> </a> </td>
+                    <td id="customer" class="text-center"> <a method="POST" href="/jobdetail/{{job[1]}}"> <b> {{ job[5] }} </b> </a> </td>
+                    <td id="address" class="text-center"> <a method="POST" href="/jobdetail/{{job[1]}}"> <b> {{ job[7] }} </b> </a> </td>
+                    <td id="postcode" class="text-center"> <a method="POST" href="/jobdetail/{{job[1]}}"> <b> {{ job[8] }} </b> </a> </td>
+                    <td id="complete" class="text-center"> 
+                        {% if job[9] == "No" %}
+                        <i class="bi bi-circle" style="font-size: 1rem; color:inherit;"></i>
+                        {% else: %}
+                        <i class="bi bi-check-circle-fill" style="font-size: 1rem; color:green;"></i>
+                        {% endif %}
+                    </td>
+                </tr>
+                
+                {% endfor %}
 
-            </table>
+        </table>
 
     </div>
 
@@ -93,5 +92,4 @@
     <br>
     <br>
 
-    {% endblock %}  
-</main>
+    {% endblock %}
