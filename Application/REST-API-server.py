@@ -4,6 +4,9 @@ import random
 from flask_wtf import FlaskForm
 from wtforms import PasswordField, validators
 import datetime
+import filters
+from flask_bootstrap import Bootstrap
+from flask_datepicker import datepicker
 
 dbLogin = mysql.connector.connect(
         host="localhost",
@@ -16,6 +19,9 @@ mycursor = dbLogin.cursor()
 
 app = Flask(__name__)
 app.secret_key = 'exit_code_zero'
+app.jinja_env.filters['ordinal'] = filters.ordinal
+Bootstrap(app)
+datepicker(app)
 
 class SignupForm(FlaskForm):
     pword = PasswordField('password', [
@@ -53,13 +59,13 @@ def homePage():
 def login():
     uName = request.form["uName"]
     password = request.form["password"]
-    sqlCheckQuery = "SELECT first_name FROM users2 WHERE user_name = %s AND password = %s"
+    sqlCheckQuery = "SELECT first_name, user_name, skills FROM users2 WHERE user_name = %s AND password = %s"
     mycursor.execute(sqlCheckQuery, (uName, password))
-    user = mycursor.fetchone()[0]
+    user = mycursor.fetchone()
     if user:
+        session["skill"] = user[2]
         session["user_id"] = user[1]
-        session["name"] = user[0]
-        session["user"] = user
+        session["user"] = user[0]
         return redirect(url_for("landingPage"))
     else:
         flash("Invalid username or password")
@@ -89,8 +95,6 @@ def landingPage():
     image = random.choice(imageList)
 
     if "user_id" in session:
-        user_id = session["user_id"]
-        name = session["name"]
         user = session["user"]
         return render_template("landingPage", name = user, image=image, data = request.form)
     else:
@@ -148,36 +152,42 @@ def sign_up():
     image = random.choice(imageList)
     return render_template("newUser", image = image)
 
-@app.route("/jobsummary/<date>", methods=["GET","POST"])
-def job_list(date):
+@app.route("/jobsummary/<datepicker>", methods=["GET", "POST"])
+def job_list(datepicker):
+    skill = session["skill"]
     if request.method == "POST":
-        date = request.form['date']
+        selected_date = request.form['datepicker']
     else:
-        date = datetime.date.today().strftime("%Y-%m-%d")
+        selected_date = datetime.date.today().strftime("%Y-%m-%d")
 
-    sqlFindDetailsQuery = "SELECT * from jobs where date = %s"
-    mycursor.execute(sqlFindDetailsQuery, (date,))
+    sqlFindDetailsQuery = "SELECT * FROM jobs2 WHERE visitdate = %s and engalloc = %s"
+    mycursor.execute(sqlFindDetailsQuery, (selected_date, skill))
     jobs = mycursor.fetchall()
 
-    return render_template("jobsummary", date=date, jobs=jobs)
+    today = datetime.date.today()
+
+    return render_template("jobsummary", selected_date=selected_date, jobs=jobs, today=today, skill=skill)
+
+
+
 
 @app.route("/jobdetail/<jobref>", methods=["GET","POST"])
 def job_detail(jobref):
-    sqlFindJobDetailsQuery = "SELECT * from jobs where jobref = %s"
+    sqlFindJobDetailsQuery = "SELECT * from jobs2 where jobref = %s"
     mycursor.execute(sqlFindJobDetailsQuery, (jobref,))
     jobs = mycursor.fetchall()
     return render_template("jobdetail", jobs=jobs)
 
 @app.route("/startjob/<job>", methods=["GET","POST"])
 def start_job(job):
-    sqlGetJobDetailsQuery = "SELECT * from jobs where jobref = %s"
+    sqlGetJobDetailsQuery = "SELECT * from jobs2 where jobref = %s"
     mycursor.execute(sqlGetJobDetailsQuery, (job,))
     this_job = mycursor.fetchall()
     return render_template("jobinprog", this_job=this_job)
 
 @app.route("/complete/<job>", methods=["GET","POST"])
 def job_completed(job):
-    sqlCompleteJobQuery = "UPDATE jobs SET completed = 'Yes' WHERE jobref = %s"
+    sqlCompleteJobQuery = "UPDATE jobs2 SET completed = 'Yes' WHERE jobref = %s"
     mycursor.execute(sqlCompleteJobQuery, (job,))
     dbLogin.commit()
     return redirect(url_for("start_job", job=job))

@@ -16,6 +16,8 @@
                 </p>
             </center>
         </div>
+        
+        <div class="container">
         <div class="row g-0 d-flex justify-content-center align-items-center h-100">
           <div class="col-sm-3 kb-column">
             <img src="{{url_for('static', filename='img8.jpg')}}" 
@@ -74,6 +76,7 @@
           </div>
         </div>
       </div>
+    </div>
 
       {% endblock %}  
     </main>

@@ -12,7 +12,7 @@
 }
 
 td {
-  font-size: 11px;
+  font-size: 14px;
 }
 
 body, html {
@@ -40,7 +40,7 @@ button {
 }
 
 .alert {
-  position: relative;
+  position: absolute;
   top: 50%;
   left: 25%;
 }
@@ -95,9 +95,3 @@ a, a:link, a:visited, a:hover, a:active {
     border-color: #f5c6cb;
 }
 
-#test {
-  border-radius: 18px;
-  background: #261bc0;
-  box-shadow: inset 11px 11px 25px #1d1594,
-              inset -11px -11px 25px #2f21ec;
-}

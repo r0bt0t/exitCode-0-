@@ -5,7 +5,7 @@
 
 {% block content %}
 
-<div class="container col-xxl-8 px-4 py-5">
+<div class="container col-xxl-8 px-4 py-5 mb-5">
   <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
     <div class="col-10 col-sm-8 col-lg-6">
       <img src={{image}} id="productimgs" class="d-block mx-lg-auto img-fluid" alt="Sky product images" width="700" height="500" loading="lazy" style="border: 2px solid rgb(33, 66, 156)">
@@ -17,7 +17,7 @@
       </div>
 
     <div class="col-lg-6">
-      <h1 class="display-3 fw-bold text-body-emphasis lh-1 mb-3 title upper"> Welcome back {{name}} </h1>
+      <h1 class="display-3 fw-bold text-body-emphasis lh-1 mb-3 title upper"> Welcome back {{name}} {{ user }} {{ user_id }}</h1>
         <p class="lead"> Your jobs for the day are ready when you are. 
         <br>
         Click the link below to get started
