@@ -1,42 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
 
-{% extends "base" %}
+<!--In Bootstrap the global box-sizing value is switched from content-box to border-box.-->
 
 
-<title> {% block title %} Login page {% endblock %} </title>
+<!--Meta tags to help with SEO-->
+<!--The meta robot tag tells search engines if and how they should crawl your pages(s)-->
+<!--The index tells bots to index the page, follow tells them to follow links and that you vouch for those links-->
+<meta name="robots" content="index, follow">
+
+<!--Meta description is not used for SEO directly but can often be used by browsers to provide the summary in their search results-->
+<meta name="description" content="Place the description text here - write an individual description for each page of your site">
+
+<!--Required meta tags-->
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!--Page name to display in browser-->
+<title> Login Page </title>
+<link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+
+<!--Link to Bootstrap stylesheets-->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<!--Link to Bootstrap Icons Stylesheet-->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+<!--Links to project specific sheets-->
+<link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+<!--Bootstrap datepicker CSS-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+</head>
+
+<body>
 
 <main>
 
-  {% block content %}
-
   {% with messages = get_flashed_messages() %}
       {% if messages %}
-        <ul class="flashes">
-          {% for message in messages %}
-          <div class="alert alert-primary d-flex align-items-center w-25 p-3" role="alert">
-            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="rgb(33, 66, 156)" class="bi bi-check-lg" viewBox="0 0 16 16">
-              <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
-            </svg>
-            <div>
-              {{ message }}
-            </div>
-            <button type="button" class="btn-close bi bi-x-lg" data-bs-dismiss="alert" aria-label="Close">Close</button>
+        {% for message in messages %}
+        <div class="container col-lg-6 gappedT">
+          <div class="row d-flex justify-content-center alert-success alert-dismissible fade show" role="alert">
+            <strong class="gappedR"> Good Job! </strong> {{ message }}
+            <button type="button" class="btn-close gappedL" data-bs-dismiss="alert" aria-label="Close"></button>
           </div>
-        </ul>
-          {% endfor %}
+        </div>
+        {% endfor %}
       {% endif %}
     {% endwith %}
-          
 
     <section class="vh-100">
         <div class="container py-5 h-100">
           <div class="row d-flex justify-content-center align-items-center h-100" style="opacity:100%; color:#393f81;">
             <div class="col col-xl-10">
-              <div class="card" 
-              style="
-              border:rgb(0, 15, 245) solid 1px;
-              border-radius: 1.5rem;
-              box-shadow: 0px 5px 6px 0px rgb(9, 17, 83);
-              ">
                 <div class="row g-0">
                   <div class="col-md-6 col-lg-5 d-none d-md-block">
                     <img src={{image}};
@@ -53,17 +70,10 @@
                   <div class="col-md-6 col-lg-7 d-flex align-items-center">
                     <div class="card-body p-4 p-lg-5 text-black">
       
-                      <form method="POST" action="{{ url_for('landing') }}">
+                      <form method="POST" action="/login">
       
                         <div class="d-flex align-items-center mb-3 pb-1">
-                          <i class="fas fa-cubes fa-2x me-3">
-                          </i>
-                          <span class="h1 fw-bold mb-0 title"  
-                          style="
-                          color: rgb(0, 15, 245);
-                          ">
-                          Project Athena
-                        </span>                           
+                          <img src="{{ url_for('static', filename='logo.png') }}">                          
                         </div>
       
                         <h5 class="fw-normal mb-3 pb-3 title" style="letter-spacing: 1px; color: rgb(0, 15, 245);">
@@ -81,17 +91,16 @@
                         
                         <div class="pt-1 mb-4">
                           <button class="btn btn-dark btn-lg btn-block"
-                          type="button submit" 
+                          type="button submit"
                           style="
                           background-color:rgb(0, 15, 245);
-                          background-image: linear-gradient(-1deg, transparent 49%, rgba(255, 255, 255, 0.15) 50%, rgba(225, 225, 225, 0));
-                          ">
+                          " data-toggle="tooltip" data-placement="top" title="Click to log in to your account">
                             Login
                           </button>
                         </div>
                         <a class="small text-muted" href="#!">Forgot password?</a>
                         <p class="mb-5 pb-lg-2">Don't have an account? 
-                          <a class="title" href="/newuser">Register here</a></p> 
+                          <a class="title" href="/newuser" data-toggle="tooltip" data-placement="top" title="Sign up for an account">Register here</a></p> 
                         <a href="#!" class="small text-muted">Terms of use.</a>
                         <a href="#!" class="small text-muted">Privacy policy</a>
                       </form>
@@ -99,9 +108,21 @@
                     </div>
                   </div>
                 </div>
-              </div>
             </div>
           </div>
         </div>
       </section>
-  {% endblock %}
+  </main>
+
+
+<!-- Optional JavaScript -->
+<!-- Include Bootstrap JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<!--Best practice is to place these at the very end of the <body> section just before the closing tag-->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>   
+  <script src="{{ url_for('static', filename='actions.js') }}"></script>
+  </body>
+  </html>
+  

@@ -1,203 +1,83 @@
-
 {% extends "base" %}
 
-    <title> {% block title %} Job Summary {% endblock %} </title>
+{% block title %}Job Summary{% endblock %}
 
-    <main>
+{% block content %}
+  <div class="container">
+    <div class="px-4 pt-5 my-5 text-center border-bottom">
+      <h1 class="display-4 fw-bold title">
+        Your jobs for {{ today.strftime("%A") }} {{ today.day|ordinal }} {{ today.strftime("%B") }}
+      </h1>
 
-      {% block content %}
-
-      <div class="px-4 pt-5 my-5 text-center border-bottom">
-        <h1 class="display-4 fw-bold title"> Jobs List </h1>
-        <div class="col-lg-6 mx-auto">
-          <p class="lead mb-4"> An overview of the jobs allocated to you today. Click on the individual job reference numbers to access further details or to start the job </p>
-          <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
-            <button type="button" class="btn btn-primary btn-lg px-4 me-md-2 gappedR" fdprocessedid="5x1f5l" 
-            style="
-            background-color:rgb(0, 15, 245);
-            background-image: linear-gradient(-1deg, transparent 49%, rgba(255, 255, 255, 0.15) 50%, rgba(225, 225, 225, 0));
-            "> 
-            <a href="{{ url_for('landing')}}"> Back to Profile </a> </button>
-            <button type="button" class="btn btn-outline-secondary btn-lg px-4 gappedL" fdprocessedid="ynlw75"
-            style="
-            background-image: linear-gradient(-1deg, transparent 49%, rgba(255, 255, 255, 0.15) 50%, rgba(225, 225, 225, 0));
-            ">
-            <a href="/knowledgebase"> Knowledge Bank </a> </button>
-          </div>
-        </div>
-        <div style="max-height: 100vh;">
-          <div  class="container">
-            <div class="align-items-center">
-                <div class="img-fluid border rounded-3 shadow-lg mb-4">
-                    <table class="table table-striped table-bordered">
-                        <thead class = "thead-dark">
-                            <tr>
-                                <th scope="col" class="col" style="text-align:center"> Job Ref </th>
-                                <th scope="col" class="col" style="text-align:center"> Job Type </th>
-                                <th scope="col" class="col" style="text-align:center"> Cust Name </th>
-                                <th scope="col" class="col" style="text-align:center"> Address </th>
-                                <th scope="col" class="col" style="text-align:center"> Time Slot </th>
-                                <th scope="col" class="col" style="text-align:center"> Detail </th>
-                                <th scope="col" class="col" style="text-align:center"> Complete </th>
-                            </tr>
-                        </thead>
-        
-                            <tr>
-                                <td id="job1" scope="col" class="col" style="text-align:center"> <a href="{{ url_for('job_detail')}}"> EXAMPLE LINK </a> </td>
-                                <td id="type1"  scope="col" class="col" style="text-align:center"> </td>
-                                <td id="cust1"  scope="col" class="col" style="text-align:center"> </td>
-                                <td id="address1"  scope="col" class="col" style="text-align:center"> </td>
-                                <td id="time1"  scope="col" class="col" style="text-align:center"> </td>
-                                <td id="detail1"  scope="col" class="col" style="text-align:center"> </td>
-                                <td id="complete1"  scope="col" class="col" style="text-align:center"> 
-                                    {% if job1 %}
-                                    <i class="bi bi-circle" style="font-size: 1rem; color:inherit;"></i>
-                                    {% else: %}
-                                    <i class="bi bi-check-circle-fill" style="font-size: 1rem; color:green;"></i>
-                                    {% endif %}
-                                </td>
-                            </tr>
-                            <tr>
-                                <td id="job2" scope="col" class="col" style="text-align:center"> </td>
-                                <td id="type2"  scope="col" class="col" style="text-align:center"> </td>
-                                <td id="cust2"  scope="col" class="col" style="text-align:center"> </td>
-                                <td id="address2"  scope="col" class="col" style="text-align:center"> </td>
-                                <td id="time2"  scope="col" class="col" style="text-align:center"> </td>
-                                <td id="detail2"  scope="col" class="col" style="text-align:center"> </td>
-                                <td id="complete2"  scope="col" class="col" style="text-align:center"> 
-                                    {% if not job2 %}
-                                    <i class="bi bi-circle" style="font-size: 1rem; color:inherit;"></i>
-                                    {% else: %}
-                                    <i class="bi bi-check-circle-fill" style="font-size: 1rem; color:green;"></i>
-                                    {% endif %}
-                                </td>
-                            </tr>
-                            <tr>
-                                <td id="job3" scope="col" class="col" style="text-align:center"> </td>
-                                <td id="type3"  scope="col" class="col" style="text-align:center"> </td>
-                                <td id="cust3"  scope="col" class="col" style="text-align:center"> </td>
-                                <td id="address3"  scope="col" class="col" style="text-align:center"> </td>
-                                <td id="time3"  scope="col" class="col" style="text-align:center"> </td>
-                                <td id="detail3"  scope="col" class="col" style="text-align:center"> </td>
-                                <td id="complete3"  scope="col" class="col" style="text-align:center"> 
-                                    {% if job3 %}
-                                    <i class="bi bi-circle" style="font-size: 1rem; color:inherit;"></i>
-                                    {% else: %}
-                                    <i class="bi bi-check-circle-fill" style="font-size: 1rem; color:green;"></i>
-                                    {% endif %}
-                                </td>
-                            </tr>
-                            <tr>
-                                <td id="job4" scope="col" class="col" style="text-align:center"> </td>
-                                <td id="type4"  scope="col" class="col" style="text-align:center"> </td>
-                                <td id="cust4"  scope="col" class="col" style="text-align:center"> </td>
-                                <td id="address4"  scope="col" class="col" style="text-align:center"> </td>
-                                <td id="time4"  scope="col" class="col" style="text-align:center"> </td>
-                                <td id="detail4"  scope="col" class="col" style="text-align:center"> </td>
-                                <td id="complete4"  scope="col" class="col" style="text-align:center"> 
-                                    {% if not job4 %}
-                                    <i class="bi bi-circle" style="font-size: 1rem; color:inherit;"></i>
-                                    {% else: %}
-                                    <i class="bi bi-check-circle-fill" style="font-size: 1rem; color:green;"></i>
-                                    {% endif %}
-                                </td>
-                            </tr>
-                            <tr>
-                                <td id="job5" scope="col" class="col" style="text-align:center"> </td>
-                                <td id="type5"  scope="col" class="col" style="text-align:center"> </td>
-                                <td id="cust5"  scope="col" class="col" style="text-align:center"> </td>
-                                <td id="address5"  scope="col" class="col" style="text-align:center"> </td>
-                                <td id="time5"  scope="col" class="col" style="text-align:center"> </td>
-                                <td id="detail5"  scope="col" class="col" style="text-align:center"> </td>
-                                <td id="complete5"  scope="col" class="col" style="text-align:center">
-                                    {% if not job5 %}
-                                    <i class="bi bi-circle" style="font-size: 1rem; color:inherit;"></i>
-                                    {% else: %}
-                                    <i class="bi bi-check-circle-fill" style="font-size: 1rem; color:green;"></i>
-                                    {% endif %}
-                                </td>
-                            </tr>
-                            <tr>
-                                <td id="job6" scope="col" class="col" style="text-align:center"> </td>
-                                <td id="type6"  scope="col" class="col" style="text-align:center"> </td>
-                                <td id="cust6"  scope="col" class="col" style="text-align:center"> </td>
-                                <td id="address6"  scope="col" class="col" style="text-align:center"> </td>
-                                <td id="time6"  scope="col" class="col" style="text-align:center"> </td>
-                                <td id="detail6"  scope="col" class="col" style="text-align:center"> </td>
-                                <td id="complete6"  scope="col" class="col" style="text-align:center"> 
-                                    {% if job6 %}
-                                    <i class="bi bi-circle" style="font-size: 1rem; color:inherit;"></i>
-                                    {% else: %}
-                                    <i class="bi bi-check-circle-fill" style="font-size: 1rem; color:green;"></i>
-                                    {% endif %}
-                                </td>
-                            </tr>
-                            <tr>
-                                <td id="job7" scope="col" class="col" style="text-align:center"> </td>
-                                <td id="type7"  scope="col" class="col" style="text-align:center"> </td>
-                                <td id="cust7"  scope="col" class="col" style="text-align:center"> </td>
-                                <td id="address7"  scope="col" class="col" style="text-align:center"> </td>
-                                <td id="time7"  scope="col" class="col" style="text-align:center"> </td>
-                                <td id="detail7"  scope="col" class="col" style="text-align:center"> </td>
-                                <td id="complete7"  scope="col" class="col" style="text-align:center"> 
-                                    {% if job7 %}
-                                    <i class="bi bi-circle" style="font-size: 1rem; color:inherit;"></i>
-                                    {% else: %}
-                                    <i class="bi bi-check-circle-fill" style="font-size: 1rem; color:green;"></i>
-                                    {% endif %}
-                                </td>
-                            </tr>
-                            <tr>
-                                <td id="job8" scope="col" class="col" style="text-align:center"> </td>
-                                <td id="type8"  scope="col" class="col" style="text-align:center"> </td>
-                                <td id="cust8"  scope="col" class="col" style="text-align:center"> </td>
-                                <td id="address8"  scope="col" class="col" style="text-align:center"> </td>
-                                <td id="time8"  scope="col" class="col" style="text-align:center"> </td>
-                                <td id="detail8"  scope="col" class="col" style="text-align:center"> </td>
-                                <td id="complete8"  scope="col" class="col" style="text-align:center"> 
-                                    {% if not job8 %}
-                                    <i class="bi bi-circle" style="font-size: 1rem; color:inherit;"></i>
-                                    {% else: %}
-                                    <i class="bi bi-check-circle-fill" style="font-size: 1rem; color:green;"></i>
-                                    {% endif %}
-                                </td>
-                            </tr>
-                            <tr>
-                                <td id="job9" scope="col" class="col" style="text-align:center"> </td>
-                                <td id="type9"  scope="col" class="col" style="text-align:center"> </td>
-                                <td id="cust9"  scope="col" class="col" style="text-align:center"> </td>
-                                <td id="address9"  scope="col" class="col" style="text-align:center"> </td>
-                                <td id="time9"  scope="col" class="col" style="text-align:center"> </td>
-                                <td id="detail9"  scope="col" class="col" style="text-align:center"> </td>
-                                <td id="complete9"  scope="col" class="col" style="text-align:center"> 
-                                    {% if job9 %}
-                                    <i class="bi bi-circle" style="font-size: 1rem; color:inherit;"></i>
-                                    {% else: %}
-                                    <i class="bi bi-check-circle-fill" style="font-size: 1rem; color:green;"></i>
-                                    {% endif %}
-                                </td>
-                            </tr>
-                            <tr>
-                                <td id="job10" scope="col" class="col" style="text-align:center"> </td>
-                                <td id="type10"  scope="col" class="col" style="text-align:center"> </td>
-                                <td id="cust10"  scope="col" class="col" style="text-align:center"> </td>
-                                <td id="address10"  scope="col" class="col" style="text-align:center"> </td>
-                                <td id="time10"  scope="col" class="col" style="text-align:center"> </td>
-                                <td id="detail10"  scope="col" class="col" style="text-align:center"> </td>
-                                <td id="complete10"  scope="col" class="col" style="text-align:center"> 
-                                    {% if not job10 %}
-                                    <i class="bi bi-circle" style="font-size: 1rem; color:inherit;"></i>
-                                    {% else: %}
-                                    <i class="bi bi-check-circle-fill" style="font-size: 1rem; color:green;"></i>
-                                    {% endif %}
-                                </td>
-                            </tr>
-                    </table>
-                </div>
-            </div>
-        </div>
-        </div>
+      <div class="col-lg-6 mx-auto">
+        <p class="lead mb4">
+          Click on the job reference numbers to access further details or to start the job  <br> Alternatively select a date to see work from that day
+        </p>
       </div>
     </div>
-      {% endblock %}  
-    </main>
+  </div>
+
+  <center>
+    <div class="row container align-items-center table-responsive mn-vw-100">
+        <table class="row container align-items-center table-responsive mn-vw-100">
+          <tr>
+            <td>
+              <form class="verticalform" method="POST">
+              <input type="text" class="form-control dp gappedR" id="datepicker" name="datepicker" autocomplete="off" value="{{ selected_date }}">
+            </td>
+            <td>    
+              <button type="submit" class="btn btn-primary gappedL">Submit</button>
+              </form>
+            </td>  
+          </tr>
+        </table>
+
+      <table class="table table-striped table-bordered">
+        <thead class="thead-dark">
+          <tr>
+            <th class="text-center">Job Ref</th>
+            <th class="text-center">Job Type</th>
+            <th class="text-center">Time Slot</th>
+            <th class="text-center">Customer</th>
+            <th class="text-center">Address</th>
+            <th class="text-center">Postcode</th>
+            <th class="text-center">Complete</th>
+          </tr>
+        </thead>
+
+        {% for job in jobs %}
+        <tr>
+          <td id="job" name="job" class="text-center">
+            <a method="POST" href="/jobdetail/{{job[14]}}"><b>{{ job[14] }}</b></a>
+          </td>
+          <td id="type" class="text-center">
+            <a method="POST" href="/jobdetail/{{job[14]}}"><b>{{ job[8] }}</b></a>
+          </td>
+          <td id="time" class="text-center">
+            <a method="POST" href="/jobdetail/{{job[14]}}"><b>{{ job[2] }}</b></a>
+          </td>
+          <td id="customer" class="text-center">
+            <a method="POST" href="/jobdetail/{{job[14]}}"><b>{{ job[4] }} {{ job[5] }}</b></a>
+          </td>
+          <td id="address" class="text-center">
+            <a method="POST" href="/jobdetail/{{job[14]}}"><b>{{ job[6] }}</b></a>
+          </td>
+          <td id="postcode" class="text-center">
+            <a method="POST" href="/jobdetail/{{job[14]}}"><b>{{ job[7] }}</b></a>
+          </td>
+          <td id="complete" class="text-center">
+            {% if job[13] == "No" %}
+            <i class="bi bi-circle" style="font-size: 1rem; color:inherit;"></i>
+            {% else %}
+            <i class="bi bi-check-circle-fill" style="font-size: 1rem; color:green;"></i>
+            {% endif %}
+          </td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+  </center>
+
+{% endblock %}
+
+
