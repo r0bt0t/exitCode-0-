@@ -1,0 +1,103 @@
+{% extends "base" %}
+
+<title>{% block title %} Sky Product Range {% endblock %}</title>
+
+{% block content %}
+
+<div class="container col-xxl-8 px-4 py-5 mb-5">
+  <div class="row align-items-center g-5 py-5">
+    <div class="col-lg-6">
+      <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3 title upper"> Some of Sky's amazing product range </h1>
+      <p class="lead"> What would really add value for your customer today? </p>
+    </div>
+  </div>
+  <div class="row align-items-center g-5 py-5">
+    <div class="col-lg-6 text-lg-end">
+      <a href="https://www.sky.com/watch" target="_blank"> <img src={{image}} id="productimgs" class="d-block mx-auto img-fluid" alt="Sky product images" title="Sky product images" width="700" height="500" loading="lazy" style="border: 2px solid rgb(33, 66, 156)"> </a>
+      <label for="productimgs" class="font-italic small text-muted">Some of the amazing products <i class="title">Sky</i> can offer</label>
+    </div>
+    <div class="col-lg-6 text-lg-end">
+      <a href="https://www.sky.com/protect" target="_blank"> <img src="{{ url_for('static', filename='protect.jpg') }}" id="productimgs" class="d-block mx-auto img-fluid" alt="Sky Protect" title="Sky Protect" width="700" height="500" loading="lazy" style="border: 2px solid rgb(33, 66, 156)"> </a>
+      <label for="productimgs" class="font-italic small text-muted"> Smart home insurance with <i class="title">Sky</i> Protect</label>
+    </div>
+    <div class="col-lg-6 text-lg-end">
+      <a href="https://www.sky.com/tv/stream" target="_blank"> <img src="{{ url_for('static', filename='img3.avif') }}" id="productimgs" class="d-block mx-auto img-fluid" alt="Sky Streams" title="Sky Streams" width="700" height="500" loading="lazy" style="border: 2px solid rgb(33, 66, 156)"> </a>
+      <label for="productimgs" class="font-italic small text-muted"> The all new <i class="title">Sky</i> Streams</label>
+    </div>
+    <div class="col-lg-6 text-lg-end">
+      <a href="https://www.sky.com/glass" target="_blank"> <img src="{{ url_for('static', filename='img17.webp') }}" id="productimgs" class="d-block mx-auto img-fluid" alt="Sky Glass" title="Sky Glass" width="700" height="500" loading="lazy" style="border: 2px solid rgb(33, 66, 156)"> </a>
+      <label for="productimgs" class="font-italic small text-muted"> The future of Sky tv is here with <i class="title">Sky</i> Glass</label>
+    </div>
+    <div class="col-lg-6 text-lg-end">
+      <a href="https://www.sky.com/tv/sky-q" target="_blank"> <img src="{{ url_for('static', filename='skyq.jpg') }}" id="productimgs" class="d-block mx-auto img-fluid" alt="Sky Q" title="Sky Q" width="700" height="500" loading="lazy" style="border: 2px solid rgb(33, 66, 156)"> </a>
+      <label for="productimgs" class="font-italic small text-muted"> All in one place, easy, <i class="title">Sky</i> Q</label>
+    </div>
+    <div class="col-lg-6 text-lg-end">
+      <a href="https://www.sky.com/glass" target="_blank"> <img src="{{ url_for('static', filename='minionbb.png') }}" id="productimgs" class="d-block mx-auto img-fluid" alt="Sky BroadBand" title="Sky BroadBand" width="700" height="500" loading="lazy" style="border: 2px solid rgb(33, 66, 156)"> </a>
+      <label for="productimgs" class="font-italic small text-muted"> Ready, Steady, Go <i class="title">Sky</i> BroadBand</label>
+    </div>
+  </div>
+<section class="product-comparison">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>Satelite Dish & Cable</th>
+        <th>Requires Internet</th>
+        <th>HD</th>
+        <th>UHD</th>
+        <th>4K Streaming</th>
+        <th>Dolby Atmos Sound</th>
+        <th>Multiscreen</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Sky Q</td>
+        <td><center><i class="bi bi-check2-circle" style="font-size: 1rem; color:#0BDA51;"></i></center></td>
+        <td><center><i class="bi bi-file-excel" style="font-size: 1rem; color:red"></i></center></td>
+        <td><center><i class="bi bi-check2-circle" style="font-size: 1rem; color:#0BDA51;"></i></center></td>
+        <td><center><i class="bi bi-check2-circle" style="font-size: 1rem; color:#0BDA51;"></i></center></td>
+        <td><center><i class="bi bi-check2-circle" style="font-size: 1rem; color:#0BDA51;"></i></center></td>
+        <td><center><i class="bi bi-check2-circle" style="font-size: 1rem; color:#0BDA51;"></i></center></td>
+        <td><center><i class="bi bi-check2-circle" style="font-size: 1rem; color:#0BDA51;"></i></center></td>
+        <td><center><type="button" class="btn btn-outline-primary px-4"> <a href="https://www.sky.com/tv/sky-q" target="_blank"> More Info </a></button></td>
+      </tr>
+      <tr>
+        <td>Sky Q Multiscreen</td>
+        <td><center><i class="bi bi-check2-circle" style="font-size: 1rem; color:#0BDA51;"></i></center></td>
+        <td><center><i class="bi bi-check2-circle" style="font-size: 1rem; color:#0BDA51;"></i></center></td>
+        <td><center><i class="bi bi-check2-circle" style="font-size: 1rem; color:#0BDA51;"></i></center></td>
+        <td><center><i class="bi bi-file-excel" style="font-size: 1rem; color:red"></i></center></td>
+        <td><center><i class="bi bi-file-excel" style="font-size: 1rem; color:red"></i></center></td>
+        <td><center><i class="bi bi-file-excel" style="font-size: 1rem; color:red"></i></center></td>
+        <td><center><i class="bi bi-check2-circle" style="font-size: 1rem; color:#0BDA51;"></i></center></td>
+        <td><center><type="button" class="btn btn-outline-primary px-4"> <a href="https://www.sky.com/tv/sky-q" target="_blank"> More Info </a></button></td>
+      </tr>
+      <tr>
+        <td>Sky Glass</td>
+        <td><center><i class="bi bi-file-excel" style="font-size: 1rem; color:red"></i></center></td>
+        <td><center><i class="bi bi-check2-circle" style="font-size: 1rem; color:#0BDA51;"></i></center></td>
+        <td><center><i class="bi bi-check2-circle" style="font-size: 1rem; color:#0BDA51;"></i></center></td>
+        <td><center><i class="bi bi-check2-circle" style="font-size: 1rem; color:#0BDA51;"></i></center></td>
+        <td><center><i class="bi bi-check2-circle" style="font-size: 1rem; color:#0BDA51;"></i></center></td>
+        <td><center><i class="bi bi-check2-circle" style="font-size: 1rem; color:#0BDA51;"></i></center></td>
+        <td><center><i class="bi bi-check2-circle" style="font-size: 1rem; color:#0BDA51;"></i></center></td>
+        <td><center><type="button" class="btn btn-outline-primary px-4"> <a href="https://www.sky.com/glass" target="_blank"> More Info </a></button></td>
+      </tr>
+      <tr>
+        <td>Sky Streams</td>
+        <td><center><i class="bi bi-file-excel" style="font-size: 1rem; color:red"></i></center></td>
+        <td><center><i class="bi bi-check2-circle" style="font-size: 1rem; color:#0BDA51;"></i></center></td>
+        <td><center><i class="bi bi-check2-circle" style="font-size: 1rem; color:#0BDA51;"></i></center></td>
+        <td><center><i class="bi bi-check2-circle" style="font-size: 1rem; color:#0BDA51;"></i></center></td>
+        <td><center><i class="bi bi-check2-circle" style="font-size: 1rem; color:#0BDA51;"></i></center></td>
+        <td><center><i class="bi bi-check2-circle" style="font-size: 1rem; color:#0BDA51;"></i></center></td>
+        <td><center><i class="bi bi-check2-circle" style="font-size: 1rem; color:#0BDA51;"></i></center></td>
+        <td><center><type="button" class="btn btn-outline-primary px-4"> <a href="https://www.sky.com/tv/stream" target="_blank"> More Info </a></button></td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+</div>
+{% endblock %}
