@@ -10,11 +10,6 @@ $(function () {
   $(function () {
     $('[data-toggle="tooltip"]').tooltip()
   })
-
-var collapseElementList = [].slice.call(document.querySelectorAll('.collapse'))
-    var collapseList = collapseElementList.map(function (collapseEl) {
-      return new bootstrap.Collapse(collapseEl)
-    })
    
  $(document).ready(function() {
   $('.dp').datepicker({

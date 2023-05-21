@@ -1,44 +1,39 @@
-
 {% extends "base" %}
 
-<title> {% block title %} Home {% endblock %} </title>
+<title>{% block title %}Home{% endblock %}</title>
 
 {% block content %}
 
 <div class="container col-xxl-8 px-4 py-5 mb-5">
-  <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
-    <div class="col-10 col-sm-8 col-lg-6">
-      <img src={{image}} id="productimgs" class="d-block mx-lg-auto img-fluid" alt="Sky product images" width="700" height="500" loading="lazy" style="border: 2px solid rgb(33, 66, 156)">
-        <label for="productimgs" class="font-italic small text-muted"> Some of the amazing products <i class="title">Sky</i> can offer</label>
-        
-        <img src="https://static.skyassets.com/contentstack/assets/bltff3fe8a60eb589eb/blt79ac55238d38409b/63e4fccc4036a756ba289029/BB_Router_Postcode_Checker_07.02.png" class="d-block mx-lg-auto img-fluid float-left" alt="The UKs most reliable hub" width="310" height="auto" loading="lazy">
-        <img src="https://static.skyassets.com/contentstack/assets/bltff3fe8a60eb589eb/bltb63a521544d5e1ea/633edb54d7dfe7137155ebe5/Stream_and_Remote_V2.png" class="d-block mx-lg-auto img-fluid float-right gappedT" alt="Sky Stream" width="210" height="auto" loading="lazy">
-          
-      </div>
-
+  <div class="row align-items-center g-5 py-5">
     <div class="col-lg-6">
-      <h1 class="display-3 fw-bold text-body-emphasis lh-1 mb-3 title upper"> Welcome back {{name}} {{ user }} {{ user_id }}</h1>
-        <p class="lead"> Your jobs for the day are ready when you are. 
-        <br>
-        Click the link below to get started
-        </p>
-  
-      <button type="button" class="btn btn-outline-primary btn-lg me-md-2 px-4 gappedR text-nowrap"> 
-        <a href="/jobsummary/{today()}"> GO TO JOBS </a> 
+      <h1 class="display-3 fw-bold text-body-emphasis lh-1 mb-3 title upper">Welcome back {{name}} {{ user }} {{ user_id }}</h1>
+      <p class="lead">Your jobs for the day are ready when you are.<br>Click the link below to get started</p>
+
+      <button type="button" class="btn btn-outline-primary btn-lg me-md-2 px-4 gappedR text-nowrap">
+        <a href="/jobsummary/{today()}">GO TO JOBS</a>
       </button>
 
-      <p class="lead gappedT"> Alternatively spend some time catching up on your networks
-        <br> Or try the bandwidth calculator out to see if it helps you guide your customers' usage </p>
+      <p class="lead gappedT">Alternatively spend some time catching up on your networks<br>Or try the bandwidth calculator out to see if it helps you guide your customers' usage</p>
 
-      <button type="button" class="btn btn-outline-success text-nowrap gappedR gappedT"> 
-        <a href="/bandwidth"> BANDWIDTH CALCULATOR </a> 
+      <button type="button" class="btn btn-outline-success text-nowrap gappedR gappedT">
+        <a href="/bandwidth">BANDWIDTH CALCULATOR</a>
       </button>
 
-      <button type="button" class="btn btn-outline-info text-nowrap gappedT"> 
-        <a href="{{ url_for('knowledge_base')}}"> SUPPORT PAGES </a> 
+      <button type="button" class="btn btn-outline-info text-nowrap gappedT">
+        <a href="{{ url_for('knowledge_base')}}">SUPPORT PAGES</a>
       </button>
-      
-    </div> 
+
+    </div>
+
+    <div class="col-lg-6 text-lg-end">
+      <a href="https://www.sky.com/watch"><img src={{image}} id="productimgs" class="d-block mx-auto img-fluid" alt="Sky product images" width="700" height="500" loading="lazy" style="border: 2px solid rgb(33, 66, 156)"></a>
+      <label for="productimgs" class="font-italic small text-muted">Some of the amazing products <i class="title">Sky</i> can offer</label>
+
+      <img src="https://static.skyassets.com/contentstack/assets/bltff3fe8a60eb589eb/blt79ac55238d38409b/63e4fccc4036a756ba289029/BB_Router_Postcode_Checker_07.02.png" class="d-block mx-auto img-fluid float-lg-start" alt="The UKs most reliable hub" width="310" height="auto" loading="lazy">
+      <img src="https://static.skyassets.com/contentstack/assets/bltff3fe8a60eb589eb/bltb63a521544d5e1ea/633edb54d7dfe7137155ebe5/Stream_and_Remote_V2.png" class="d-block mx-auto img-fluid float-lg-end gappedT" alt="Sky Stream" width="210" height="auto" loading="lazy">
+
+    </div>
   </div>
 </div>
-{% endblock %}  
+{% endblock %}

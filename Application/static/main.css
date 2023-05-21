@@ -95,3 +95,18 @@ a, a:link, a:visited, a:hover, a:active {
     border-color: #f5c6cb;
 }
 
+.navbar-toggler,.navbar-toggler:active,.navbar-toggler:focus {
+  border: none;
+  padding: 4px 8px;
+  outline: none;
+}
+
+.dropdown-item:hover,.dropdown-item:focus {
+  background-color: #eef6fd !important; /* Set the background color for hover and focus */
+  color: rgb(33, 66, 156) !important; /* Set the text color for hover and focus */
+}
+
+.custom-icon {
+  font-size: 2rem;
+  color:rgb(33, 66, 156);
+}
