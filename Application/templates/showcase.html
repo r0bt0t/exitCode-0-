@@ -1,0 +1,26 @@
+{% extends "base" %}
+
+<title>{% block title %} Sky Product Range {% endblock %}</title>
+
+{% block content %}
+
+<div class="container col-xxl-8 px-4 py-5 mb-5">
+  <div class="row align-items-center g-5 py-5">
+    <div class="col-lg-6">
+      <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3 title upper"> Some of Sky's amazing product range </h1>
+      <p class="lead"> What would really add value for your customer today? </p>
+    </div>
+  </div>
+  <div class="row align-items-center g-5 py-5">
+    <div class="col-lg-6 text-lg-end">
+      <a href="https://www.sky.com/watch" target="_blank"> <img src={{image}} id="productimgs" class="d-block mx-auto img-fluid" alt="Sky product images" title="Sky product images" width="700" height="500" loading="lazy" style="border: 2px solid rgb(33, 66, 156)"> </a>
+      <label for="productimgs" class="font-italic small text-muted">Some of the amazing products <i class="title">Sky</i> can offer</label>
+    </div>
+    <div class="col-lg-6 text-lg-end">
+      <a href="https://www.sky.com/protect" target="_blank"> <img src="{{ url_for('static', filename='protect.jpg') }}" id="productimgs" class="d-block mx-auto img-fluid" alt="Sky Protect" title="Sky Protect" width="700" height="500" loading="lazy" style="border: 2px solid rgb(33, 66, 156)"> </a>
+      <label for="productimgs" class="font-italic small text-muted"> Smart home insurance with <i class="title">Sky</i> Protect</label>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
