@@ -4,7 +4,7 @@
 
 <main>
   {% block content %}
-    <div class="container-fluid">
+    <div class="container-fluid mt-5">
       <div class="row justify-content-center d-flex align-items-center h-100">
         <div class="col-lg-6">
           <center> 
@@ -15,7 +15,7 @@
       </div>
     </div>
 
-    <div class="container mt-5">
+    <div class="container mt-5 mb-5">
       <div class="row">
         <div class="col-md-3 d-none d-md-block">
           <div class="image-column">

@@ -184,3 +184,8 @@ a, a:link, a:visited, a:hover, a:active {
     height: auto;
   }
 }
+
+.logo-img {
+  max-width: 120px;
+  height: auto;
+}

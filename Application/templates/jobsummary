@@ -5,13 +5,13 @@
 {% block content %}
   <div class="container">
     <div class="px-4 pt-5 my-5 text-center border-bottom">
-      <h1 class="display-4 fw-bold title">
-        Your jobs for {{ today.strftime("%A") }} {{ today.day|ordinal }} {{ today.strftime("%B") }}
+      <h1 class="display-3 fw-bold text-body-emphasis lh-1 mb-3 title upper">
+        Your jobs for {{ formatted_date }}
       </h1>
 
       <div class="col-lg-6 mx-auto">
         <p class="lead mb4">
-          Click on the job reference numbers to access further details or to start the job  <br> Alternatively select a date to see work from that day
+          Click on a job to see further details or to start the job  <br> Alternatively select a date to see work from that day
         </p>
       </div>
     </div>
@@ -19,18 +19,14 @@
 
   <center>
     <div class="row container align-items-center table-responsive mn-vw-100">
-        <table class="row container align-items-center table-responsive mn-vw-100">
-          <tr>
-            <td>
-              <form class="verticalform" method="POST">
-              <input type="text" class="form-control dp gappedR" id="datepicker" name="datepicker" autocomplete="off" value="{{ selected_date }}">
-            </td>
-            <td>    
-              <button type="submit" class="btn btn-primary gappedL">Submit</button>
-              </form>
-            </td>  
-          </tr>
-        </table>
+      <form class="verticalform mb-5" method="POST">
+        <div class="input-group">
+          <input type="text" class="form-control datepicker gappedR" id="datepicker" name="datepicker" value="{{ selected_date }}">
+          <div class="input-group-append">
+            <button type="submit" class="btn btn-primary gappedL">Submit</button>
+          </div>
+        </div>
+      </form>
 
       <table class="table table-striped table-bordered">
         <thead class="thead-dark">
