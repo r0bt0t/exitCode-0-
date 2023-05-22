@@ -1,5 +1,3 @@
-$('.alert').alert()
-
 //Enable popovers everywhere
 $(function () {
     $('.all-popover').popover({

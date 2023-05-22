@@ -43,7 +43,7 @@
         <div class="container col-lg-6 gappedT">
           <div class="row d-flex justify-content-center alert-success alert-dismissible fade show" role="alert">
             <strong class="gappedR"> Good Job! </strong> {{ message }}
-            <button type="button" class="btn-close gappedL" data-bs-dismiss="alert" aria-label="Close"></button>
+            <button type="button" class="btn-close gappedL bi bi-x-lg" data-bs-dismiss="alert" aria-label="Close"></button>
           </div>
         </div>
         {% endfor %}
@@ -52,7 +52,7 @@
 
     <section class="vh-100">
         <div class="container py-5 h-100">
-          <div class="row d-flex justify-content-center align-items-center h-100" style="opacity:100%; color:#393f81;">
+          <div class="row d-flex justify-content-center align-items-center h-100 shadow p-3 mb-5 bg-white rounded" style="opacity:100%; color:#393f81;">
             <div class="col col-xl-10">
                 <div class="row g-0">
                   <div class="col-md-6 col-lg-5 d-none d-md-block">
