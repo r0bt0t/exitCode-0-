@@ -37,21 +37,16 @@
 
   <main>
 
-  {% with messages = get_flashed_messages() %}
+    {% with messages = get_flashed_messages() %}
       {% if messages %}
-        <ul class="flashes all-popover" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?">
-          {% for message in messages %}
-          <div class="alert alert-primary d-flex align-items-center w-25 p-3" role="alert">
-            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="rgb(33, 66, 156)" viewBox="0 0 16 16">
-              <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
-            </svg>
-            <div>
-              {{ message }}
-            </div>
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"> <span class="bi bi-x-lg"> </span> </button>
+        {% for message in messages %}
+        <div class="container col-lg-6 gappedT">
+          <div class="row d-flex justify-content-center alert-success alert-dismissible fade show" role="alert">
+             {{ message }}
+            <button type="button" class="btn-close gappedL bi bi-x-lg" data-bs-dismiss="alert" aria-label="Close"></button>
           </div>
-        </ul>
-          {% endfor %}
+        </div>
+        {% endfor %}
       {% endif %}
     {% endwith %}
 
