@@ -186,6 +186,6 @@ a, a:link, a:visited, a:hover, a:active {
 }
 
 .logo-img {
-  max-width: 120px;
-  height: auto;
+  max-width: 100px;
+  height: 50px;
 }
