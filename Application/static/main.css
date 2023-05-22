@@ -11,6 +11,10 @@
   -moz-text-fill-color: transparent;
 }
 
+td {
+  font-size: 14px;
+}
+
 body, html {
   height: 100%;
   width:100%;
@@ -24,7 +28,7 @@ button {
 }
 
 .material-symbols-outlined {
-  font-size: 800%;
+  font-size: 100%;
   color:rgb(33, 66, 156);
 }
 
@@ -36,7 +40,7 @@ button {
 }
 
 .alert {
-  position: relative;
+  position: absolute;
   top: 50%;
   left: 25%;
 }
@@ -64,7 +68,7 @@ a, a:link, a:visited, a:hover, a:active {
 }
 
 .gappedT {
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 .flashes {
@@ -89,4 +93,99 @@ a, a:link, a:visited, a:hover, a:active {
     background-color: #f8d7da;
     color: #721c24;
     border-color: #f5c6cb;
+}
+
+.navbar-toggler,.navbar-toggler:active,.navbar-toggler:focus {
+  border: none;
+  padding: 4px 8px;
+  outline: none;
+}
+
+.dropdown-item:hover,.dropdown-item:focus {
+  background-color: #eef6fd !important;
+  color: rgb(33, 66, 156) !important;
+}
+
+.custom-icon {
+  font-size: 2rem;
+  color:rgb(33, 66, 156);
+}
+
+.image-column {
+  position: relative;
+  height: 90vh;
+  overflow: hidden;
+}
+
+.column-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: auto;
+  object-fit: cover;
+  object-position: 83% 0;
+}
+
+.column-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  transition: height 0.5s;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow: hidden;
+  transform: translateY(100%);
+}
+
+.image-column:hover .column-text,
+.image-column.show-text .column-text {
+  height: 80%;
+  transform: translateY(20%);
+}
+
+.column-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.column-description {
+  font-size: 18px;
+}
+
+@media (max-width: 992px) {
+  .image-column {
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  .column-text {
+    position: static;
+    background-color: transparent;
+    padding: 0;
+    height: auto;
+    display: block;
+    overflow: visible;
+    transform: none;
+  }
+
+  .column-image {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .image-column.show-text .column-text {
+    height: auto;
+  }
+}
+
+.logo-img {
+  max-width: 100px;
+  height: 50px;
 }

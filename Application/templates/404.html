@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<!--In Bootstrap the global box-sizing value is switched from content-box to border-box.-->
+
+
+<!--Meta tags to help with SEO-->
+<!--The meta robot tag tells search engines if and how they should crawl your pages(s)-->
+<!--The index tells bots to index the page, follow tells them to follow links and that you vouch for those links-->
+<meta name="robots" content="index, follow">
+
+<!--Meta description is not used for SEO directly but can often be used by browsers to provide the summary in their search results-->
+<meta name="description" content="Place the description text here - write an individual description for each page of your site">
+
+<!--Required meta tags-->
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!--Page name to display in browser-->
+<title> Login Page </title>
+<link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+
+<!--Link to Bootstrap stylesheets-->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<!--Link to Bootstrap Icons Stylesheet-->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+<!--Links to project specific sheets-->
+<link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+<!--Bootstrap datepicker CSS-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+<style>
+  .logo {
+    position: absolute;
+    top: 100px;
+    left: 450px;
+    width: 100px; /* Adjust the width as needed */
+    height: auto;
+    transform:scale(200%)
+  }
+  </style>
+  
+</head>
+
+<header>
+
+
+        <div class="d-flex align-items-center">
+          <a class="navbar-brand mr-2">
+            <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="logo">
+          </a>
+        </div>
+
+</header>
+
+<body>
+
+<main>
+
+  <section class="vh-100">
+
+    <div class="container col-xxl-8 px-4 py-5 mb-5">
+        <div class="row align-items-center g-5 py-5">
+            <div class="col-lg-6">
+                <h1 class="display-1 fw-bold text-body-emphasis lh-1 mb-3 title"> ERROR 404 </h1>
+                <h1 class="display-4 fw-bold text-body-emphasis lh-1 mb-3 title"> SORRY WE COULDN'T FIND YOUR PAGE </h1>
+                <h4 class="display-6 fw-bold text-body-emphasis lh-1 mb-3 title"> (OR THE DEVELOPERS MIGHT NOT HAVE MADE IT YET OF COURSE) </h4>
+                <a href="{{ url_for('landingPage') }}"> <h5 class="display-4 title"> <i class="bi bi-house-exclamation-fill"></i> GO BACK </h5> </a>
+            </div>
+            <div class="col-lg-6">
+                <img src="{{ url_for('static', filename='minion3.png') }}" id="productimgs" class="d-block mx-auto img-fluid" alt="Error 404 Page not found" title="page not found" width="100%" height="auto" loading="lazy">
+            </div>
+        </div>   
+    </div>
+
+  </section>
+
+</main>
+
+
+<!-- Optional JavaScript -->
+<!-- Include Bootstrap JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<!--Best practice is to place these at the very end of the <body> section just before the closing tag-->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>   
+<script src="{{ url_for('static', filename='actions.js') }}"></script>
+</body>
+</html>
+  

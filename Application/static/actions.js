@@ -1,11 +1,14 @@
-function myFunction(x) {
-	x.classList.toggle("change");
-  }
+$('.alert').alert()
 
-$(document).ready(function() {
-  $('#datepicker').datepicker({
-    format: 'yyyy-mm-dd',
-    autoclose: true
-  });
-});
-  
+//Enable popovers everywhere
+$(function () {
+    $('.all-popover').popover({
+      container: 'body'
+    })
+  })
+
+  //Enable tool tips everywhere
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+  })
+ 
