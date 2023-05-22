@@ -31,6 +31,18 @@ class SignupForm(FlaskForm):
         validators.Regexp(regex=".*[!@#$%^&*()].*", message="Password must contain at least one special character")
     ])
 
+def format_date(date):
+    date_obj = datetime.datetime.strptime(date, "%Y-%m-%d")
+    day = date_obj.day
+
+    if 4 <= day <= 20 or 24 <= day <= 30:
+        suffix = "th"
+    else:
+        suffix = ["st", "nd", "rd"][day % 10 - 1]
+
+    formatted_date = date_obj.strftime("%A %d{} %B").format(suffix)
+    return formatted_date
+
 @app.route("/")
 def homePage():
     imageList = [
@@ -160,13 +172,15 @@ def job_list(datepicker):
     else:
         selected_date = datetime.date.today().strftime("%Y-%m-%d")
 
+    formatted_date = format_date(selected_date)
+
     sqlFindDetailsQuery = "SELECT * FROM jobs2 WHERE visitdate = %s and engalloc = %s"
     mycursor.execute(sqlFindDetailsQuery, (selected_date, skill))
     jobs = mycursor.fetchall()
 
     today = datetime.date.today()
 
-    return render_template("jobsummary", selected_date=selected_date, jobs=jobs, today=today, skill=skill)
+    return render_template("jobsummary", selected_date=selected_date, formatted_date=formatted_date, jobs=jobs, today=today, skill=skill)
 
 @app.route("/jobdetail/<jobref>", methods=["GET","POST"])
 def job_detail(jobref):

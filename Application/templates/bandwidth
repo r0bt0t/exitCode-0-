@@ -30,7 +30,7 @@
 
       <tbody>
 
-        <tr>
+        <tr class="bw-calculation-row">
           <td id="item" class="text-center"> 
             <b> 
                 <select class="form-select" aria-label="Default select example">
@@ -38,6 +38,10 @@
                     <option value="1">Playstation</option>
                     <option value="2">Sky Glass</option>
                     <option value="3">Netflix</option>
+                    <option value="4">Xbox</option>
+                    <option value="5">Laptop</option>
+                    <option value="6">Mobile</option>
+                    <option value="7">Puck</option>
                 </select> 
             </b> 
           </td>
@@ -46,7 +50,7 @@
           <td id="recbw" class="text-center"> <b> </b> </td>
         </tr>
 
-        <tr>
+        <tr class="bw-calculation-row">
             <td id="item" class="text-center"> 
               <b> 
                   <select class="form-select" aria-label="Default select example">
@@ -54,6 +58,10 @@
                       <option value="1">Playstation</option>
                       <option value="2">Sky Glass</option>
                       <option value="3">Netflix</option>
+                      <option value="4">Xbox</option>
+                      <option value="5">Laptop</option>
+                      <option value="6">Mobile</option>
+                      <option value="7">Puck</option>
                   </select> 
               </b> 
             </td>
@@ -62,7 +70,7 @@
             <td id="recbw" class="text-center"> <b> </b> </td>
           </tr>
 
-          <tr>
+          <tr class="bw-calculation-row">
             <td id="item" class="text-center"> 
               <b> 
                   <select class="form-select" aria-label="Default select example">
@@ -70,6 +78,10 @@
                       <option value="1">Playstation</option>
                       <option value="2">Sky Glass</option>
                       <option value="3">Netflix</option>
+                      <option value="4">Xbox</option>
+                      <option value="5">Laptop</option>
+                      <option value="6">Mobile</option>
+                      <option value="7">Puck</option>
                   </select> 
               </b> 
             </td>
@@ -78,7 +90,7 @@
             <td id="recbw" class="text-center"> <b> </b> </td>
           </tr>
 
-          <tr>
+          <tr class="bw-calculation-row">
             <td id="item" class="text-center"> 
               <b> 
                   <select class="form-select" aria-label="Default select example">
@@ -86,17 +98,132 @@
                       <option value="1">Playstation</option>
                       <option value="2">Sky Glass</option>
                       <option value="3">Netflix</option>
+                      <option value="4">Xbox</option>
+                      <option value="5">Laptop</option>
+                      <option value="6">Mobile</option>
+                      <option value="7">Puck</option>
                   </select> 
               </b> 
             </td>
             <td id="quantity" class="text-center"> <b> <input type="number" placeholder="Enter number of devices"> </b> </td>
             <td id="minbw" class="text-center"> <b>  </b> </td>
+            <td id="recbw" class="text-center"> <b> </b> </td>
+          </tr>
+          <tr class="bw-calculation-row">
+            <td id="item" class="text-center"> 
+              <b> 
+                  <select class="form-select" aria-label="Default select example">
+                      <option selected>Select item(s)</option>
+                      <option value="1">Playstation</option>
+                      <option value="2">Sky Glass</option>
+                      <option value="3">Netflix</option>
+                      <option value="4">Xbox</option>
+                      <option value="5">Laptop</option>
+                      <option value="6">Mobile</option>
+                      <option value="7">Puck</option>
+                  </select> 
+              </b> 
+            </td>
+            <td id="quantity" class="text-center"> <b> <input type="number" placeholder="Enter number of devices"> </b> </td>
+            <td id="minbw" class="text-center"> <b>  </b> </td>
+            <td id="recbw" class="text-center"> <b> </b> </td>
+          </tr>
+          <tr class="bw-calculation-row">
+            <td id="item" class="text-center"> 
+              <b> 
+                  <select class="form-select" aria-label="Default select example">
+                      <option selected>Select item(s)</option>
+                      <option value="1">Playstation</option>
+                      <option value="2">Sky Glass</option>
+                      <option value="3">Netflix</option>
+                      <option value="4">Xbox</option>
+                      <option value="5">Laptop</option>
+                      <option value="6">Mobile</option>
+                      <option value="7">Puck</option>
+                  </select> 
+              </b> 
+            </td>
+            <td id="quantity" class="text-center"> <b> <input type="number" placeholder="Enter number of devices"> </b> </td>
+            <td id="minbw" class="text-center"> <b>  </b> </td>
+            <td id="recbw" class="text-center"> <b> </b> </td>
+          </tr>
+          <tr class="bw-calculation-row">
+            <td id="item" class="text-center"> 
+              <b> 
+                  <select class="form-select" aria-label="Default select example">
+                      <option selected>Select item(s)</option>
+                      <option value="1">Playstation</option>
+                      <option value="2">Sky Glass</option>
+                      <option value="3">Netflix</option>
+                      <option value="4">Xbox</option>
+                      <option value="5">Laptop</option>
+                      <option value="6">Mobile</option>
+                      <option value="7">Puck</option>
+                  </select> 
+              </b> 
+            </td>
+            <td id="quantity" class="text-center"> <b> <input type="number" placeholder="Enter number of devices"> </b> </td>
+            <td id="minbw" class="text-center"> <b> </b> </td>
             <td id="recbw" class="text-center"> <b> </b> </td>
           </tr>
 
       </tbody>
 
     </table>
+
+    <script>
+      function calculateBandwidth() {
+        var row = this.closest(".bw-calculation-row");
+        var item = row.querySelector("select").value;
+        var quantity = row.querySelector("input[type=number]").value;
+    
+        var minBw = 0;
+        var recBw = 0;
+        switch (item) {
+          case "1":
+            minBw = 15;
+            recBw = 25;
+            break;
+          case "2":
+            minBw = 25;
+            recBw = 35;
+            break;
+          case "3":
+            minBw = 5;
+            recBw = 10;
+            break;
+          case "4":
+            minBw = 15;
+            recBw = 25;
+            break;
+          case "5":
+            minBw = 10;
+            recBw = 20;
+            break;
+          case "6":
+            minBw = 5;
+            recBw = 10;
+            break;
+          case "7":
+            minBw = 3;
+            recBw = 10;
+            break;
+        }
+    
+        row.querySelector("#minbw").textContent = minBw * quantity + " Mbps";
+        row.querySelector("#recbw").textContent = recBw * quantity + " Mbps";
+      }
+    
+      var rows = document.querySelectorAll(".bw-calculation-row");
+      for (var i = 0; i < rows.length; i++) {
+        var inputs = rows[i].querySelectorAll("input");
+        for (var j = 0; j < inputs.length; j++) {
+          inputs[j].addEventListener("input", calculateBandwidth);
+        }
+      }
+    </script>
+    
+
 
     <div class="progress">
   

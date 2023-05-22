@@ -31,7 +31,7 @@
 
         <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
 
-            <button type="button" class="btn btn-outline-secondary px-4 gappedL" fdprocessedid="5x1f5l" 
+            <button type="button" class="btn btn-outline-secondary px-4 gappedL" 
                 style="
                 background-image: linear-gradient(-1deg, transparent 49%, rgba(255, 255, 255, 0.15) 50%, rgba(225, 225, 225, 0));
                 "> 
@@ -40,7 +40,7 @@
                 </a> 
             </button>
 
-            <button type="button" class="btn btn-outline-secondary px-4 gappedL" fdprocessedid="ynlw75"
+            <button type="button" class="btn btn-outline-secondary px-4 gappedL"
                 style="
                 background-image: linear-gradient(-1deg, transparent 49%, rgba(255, 255, 255, 0.15) 50%, rgba(225, 225, 225, 0));
                 ">
@@ -49,7 +49,7 @@
                 </a> 
             </button>
 
-            <button type="button" class="btn btn-outline-secondary px-4 gappedL" fdprocessedid="ynlw75"
+            <button type="button" class="btn btn-outline-secondary px-4 gappedL"
                 style="
                 background-image: linear-gradient(-1deg, transparent 49%, rgba(255, 255, 255, 0.15) 50%, rgba(225, 225, 225, 0));
                 ">

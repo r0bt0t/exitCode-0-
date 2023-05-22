@@ -1,82 +1,67 @@
-
 {% extends "base" %}
 
-    <title> {% block title %} Knowledge Base {% endblock %} </title>
+<title> {% block title %} Support Home Page {% endblock %} </title>
 
-    <main>
-
-      {% block content %}
-
-      <div class="container-fluid">
-        <div class="row justify-content-center d-flex align-items-center h-100">
-          <div class="col-lg-6">
-            <center> 
-              <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3 title" style="margin-top:20px"> We want you to always be at your best </h1>
-                <p class="lead"> The best way we know of supporting you with that is to help you to be well informed. If you ever feel stuck please search through our helpful links below and see if you can find the answers you need
-                </p>
-            </center>
-        </div>
-        
-        <div class="container">
-        <div class="row g-0 d-flex justify-content-center align-items-center h-100">
-          <div class="col-sm-3 kb-column">
-            <img src="{{url_for('static', filename='img8.jpg')}}" 
-            class="img-fluid"
-            style="
-              border-radius: 1rem 0 0 1rem;
-              margin: 0.5rem 0.5rem 0.5rem 0.5rem;
-              height: 100%;
-              width: auto;
-              object-fit: cover;
-              object-position: 83% 0;
-              height:97.5%;" />
-          </div>
-          <div class="col-sm-3 kb-column">
-            <img src="{{url_for('static', filename='img11.avif')}}" 
-            class="img-fluid"
-            style="
-              border-radius: 1rem 0 0 1rem;
-              margin: 0.5rem 0.5rem 0.5rem 0.5rem;
-              height: 100%;
-              width: auto;
-              object-fit: cover;
-              object-position: 83% 0;
-              height:97.5%;" />
-          </div>
-          <div class="col-sm-3 kb-column">
-            <img src="{{url_for('static', filename='img2.jpg')}}" 
-            class="img-fluid"
-            style="
-              border-radius: 1rem 0 0 1rem;
-              margin: 0.5rem 0.5rem 0.5rem 0.5rem;
-              height: 100%;
-              width: auto;
-              object-fit: cover;
-              object-position: 83% 0;
-              height:97.5%;" />
-          </div>
-          <div class="col-sm-3 kb-column">
-            <div class="card overflow-hidden" style="width:24%vw">
-              <div class="img-fluid view zoom mask">
-                <img class="card-img" src="{{url_for('static', filename='img14.jpg')}}" 
-                  style="
-                    border-radius: 1rem 0 0 1rem;
-                    margin: 0.5rem 0.5rem 0.5rem 0.5rem;
-                    height: 100%;
-                    object-fit:cover;
-                    object-position: 83% 0;
-                    height:97.5%;" alt="Card image" />
-              </div>
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
-          </div>
+<main>
+  {% block content %}
+    <div class="container-fluid mt-5">
+      <div class="row justify-content-center d-flex align-items-center h-100">
+        <div class="col-lg-6">
+          <center> 
+            <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3 title" style="margin-top:20px"> We want you to always be at your best </h1>
+            <p class="lead"> The best way we know of supporting you with that is to help you to be well informed. If you ever feel stuck, please search through our helpful links below and see if you can find the answers you need.</p>
+          </center>
         </div>
       </div>
     </div>
 
-      {% endblock %}  
-    </main>
+    <div class="container mt-5 mb-5">
+      <div class="row">
+        <div class="col-md-3 d-none d-md-block">
+          <div class="image-column">
+            <a href="404.html">
+              <img src="{{ url_for('static', filename='img2.jpg') }}" class="column-image img-fluid" alt="Image 1">
+              <div class="column-text">
+                <h5 class="column-title title display-3 text-center"> ATLAS </h5>
+                <p class="column-description lead text-center"> All the latest on the fantastic ACE offers available to your customers </p>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-3 d-none d-md-block">
+          <div class="image-column">
+            <a href="404.html">
+              <img src="{{ url_for('static', filename='img11.avif') }}" class="column-image img-fluid" alt="Image 2">
+              <div class="column-text">
+                <h5 class="column-title title display-3 text-center"> BROADBAND </h5>
+                <p class="column-description lead text-center"> Help and guidance for all things internet related </p>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-3 d-none d-md-block">
+          <div class="image-column">
+            <a href="404.html">
+              <img src="{{ url_for('static', filename='img10.avif') }}" class="column-image img-fluid" alt="Image 3">
+              <div class="column-text">
+                <h5 class="column-title title display-3 text-center"> MDU </h5>
+                <p class="column-description lead text-center"> All the support info for your Multiple Domiciliary Unit work </p>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-3 d-none d-md-block">
+          <div class="image-column">
+            <a href="{{ url_for('showcase') }}">
+              <img src="{{ url_for('static', filename='img16.webp') }}" class="column-image img-fluid" alt="Image 4">
+              <div class="column-text">
+                <h5 class="column-title title display-3 text-center"> SHOWCASE </h5>
+                <p class="column-description lead text-center"> Need a little help with showing off our amazing Sky products? Look no further </p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endblock %}  
+</main>

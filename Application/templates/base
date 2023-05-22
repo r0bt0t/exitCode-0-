@@ -45,13 +45,18 @@
           <a class="navbar-brand mr-2">
             <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo">
           </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapseLeft" aria-controls="navbarCollapseLeft" aria-expanded="false" aria-label="Toggle navigation">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapseLeft" aria-controls="navbarCollapseLeft" aria-expanded="false" aria-label="Toggle navigation" data-toggle="tooltip" data-placement="top" title="Menu options">
             <span class="navbar-toggler-icon"></span>
           </button>
         </div>
         <div class="navbar-nav ml-auto">
           <div class="d-flex align-items-center">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapseRight" aria-controls="navbarCollapseRight" aria-expanded="false" aria-label="Toggle navigation" id="navbarToggleRight">
+            <a href="404.html">
+              <button class="navbar-toggler" type="button" aria-label="Live chat icon" id="livechat" data-toggle="tooltip" data-placement="top" title="Click here to start a live chat">
+                <span class="bi bi-chat-dots custom-icon"></span>
+              </button>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapseRight" aria-controls="navbarCollapseRight" aria-expanded="false" aria-label="Toggle navigation" id="navbarToggleRight" data-toggle="tooltip" data-placement="top" title="Account menu options">
               <span class="bi bi-person-circle custom-icon"></span>
             </button>
           </div>
@@ -73,13 +78,13 @@
       <div class="collapse navbar-collapse" id="navbarCollapseRight">
         <ul class="navbar-nav w-100">
           <li class="nav-item">
-            <a class="nav-link dropdown-item text-muted" href="/">CHANGE USER</a>
+            <a class="nav-link dropdown-item text-muted text-right" href="/">CHANGE USER</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link dropdown-item text-muted" href="#">PROFILE SETTINGS</a>
+            <a class="nav-link dropdown-item text-muted text-right" href="404.html">PROFILE SETTINGS</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link dropdown-item text-muted" href="/logout">SIGN OUT</a>
+            <a class="nav-link dropdown-item text-muted text-right" href="/logout">SIGN OUT</a>
           </li>
         </ul>
       </div>
@@ -99,31 +104,68 @@
 
 </main>
 
+<div class="container mt-5 d-sm-flex justify-content-center">
+  <div class="d-flex flex-wrap">
+    <a class="navbar-brand navbar-expand title gappedL" href="https://www.sky.com/" target="_blank">
+      <img src="{{ url_for('static', filename='skylogo.png') }}" class="logo-img" style="max-width: 100px;" data-toggle="tooltip" data-placement="top" title="The best multimedia provider">
+    </a>
+    <a class="navbar-brand navbar-expand title gappedL" href="https://www.microsoft.com/en/microsoft-teams/group-chat-software" data-toggle="tooltip" data-placement="top" title="Check in with your teams">
+      <img src="{{ url_for('static', filename='teamsLogo.png') }}" class="logo-img" style="max-width: 100px;">
+    </a>
+    <a class="navbar-brand navbar-expand title gappedL" href="https://www.yammer.com/" target="_blank">
+      <img src="{{ url_for('static', filename='yammer.png') }}" class="logo-img" style="max-width: 100px;" data-toggle="tooltip" data-placement="top" title="Keep up to date with the latest feeds">
+    </a>
+    <a class="navbar-brand navbar-expand title gappedL" href="https://open.spotify.com/" target="_blank">
+      <img src="{{ url_for('static', filename='spotify.png') }}" class="logo-img" style="max-width: 100px;" data-toggle="tooltip" data-placement="top" title="Some music or a podcast to help reset?">
+    </a>
+    <a class="navbar-brand navbar-expand title gappedL" href="https://open.spotify.com/" target="_blank">
+      <img src="{{ url_for('static', filename='linkedin.png') }}" class="logo-img" style="max-width: 100px;" data-toggle="tooltip" data-placement="top" title="Keep your LinkedIn profile up to date">
+    </a>
+  </div>
+</div>
+
+
 <div class="container mt-5 border-top">
   <footer class="py-5">
     <div class="row">
-      <div class="col-5 col-md-2 mb-3">
-        <a class="navbar-brand navbar-expand title gappedL"> <img src="{{ url_for('static', filename='logo.png') }}"> </a>
-        <a class="navbar-brand navbar-expand title gappedL" href="https://www.yammer.com/"> <img src="{{ url_for('static', filename='yammer.png') }}"> </a>
-        <a class="navbar-brand navbar-expand title gappedL" href="https://www.yammer.com/"> <img src="{{ url_for('static', filename='spotify.png') }}"> </a>
-      </div>
 
-      <div class="col-5 col-md-2 mb-3">
+      <div class="col-8 col-md-4 mb-3">
         <h5>Navigation</h5>
         <ul class="nav flex-column">
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+          <li class="nav-item mb-2"><a href="{{ url_for('landingPage') }}" class="nav-link p-0 text-muted">Profile</a></li>
+          <li class="nav-item mb-2"><a href="/knowledgebase" class="nav-link p-0 text-muted">Support</a></li>
+          <li class="nav-item mb-2"><a href="/showcase" class="nav-link p-0 text-muted">Showcase</a></li>
+          <li class="nav-item mb-2"><a href="/" class="nav-link p-0 text-muted">Change User</a></li>
+          <li class="nav-item mb-2"><a href="404.html" class="nav-link p-0 text-muted">Profile Settings</a></li>
         </ul>
       </div>
 
-    <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
-      <p>© 2023 exitCode[0] Produced as part of a training exercise. All content's original owners retain full copyright</p>
+      <div class="col-12 col-md-4 mb-3">
+        <div class="d-flex justify-content-end">
+          <div class="w-75">
+            <h5>Subscribe to our newsletter</h5>
+            <p>Get all the news from the exitCode[0] team straight to your inbox</p>
+            <form class="d-flex flex-column flex-md-row align-items-center">
+              <input id="newsletter1" type="text" class="form-control mb-2 mb-md-0" placeholder="Email address">
+              <button class="btn btn-primary btn-lg ml-md-3" type="button">Subscribe</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-4">
+      <div class="col-12">
+        <div class="d-flex justify-content-between align-items-center border-top py-3">
+          <div>
+            <p>© 2023 exitCode[0] Produced as part of a training exercise. All content's original owners retain full copyright</p>
+          </div>
+        </div>
+      </div>
     </div>
   </footer>
 </div>
+
 
 {% block scripts %}
 
