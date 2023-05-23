@@ -73,6 +73,9 @@
           <li class="nav-item">
             <a class="nav-link dropdown-item text-muted" href="/showcase">SHOWCASE</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link dropdown-item text-muted" href="/bandwidth">BANDWIDTH CALCULATOR</a>
+          </li>
         </ul>
       </div>
       <div class="collapse navbar-collapse" id="navbarCollapseRight">
@@ -106,26 +109,26 @@
 
 <div class="container mt-5 d-sm-flex justify-content-center">
   <div class="d-flex flex-wrap">
-    <a class="navbar-brand navbar-expand shadow p-3 mb-5 bg-white rounded" href="https://www.sky.com/" target="_blank">
+    <a class="navbar-brand navbar-expand" href="https://www.sky.com/" target="_blank">
       <img src="{{ url_for('static', filename='skylogo.png') }}" class="logo-img" style="max-width: 100px;" data-toggle="tooltip" data-placement="top" title="The best multimedia provider">
     </a>
-    <a class="navbar-brand navbar-expand shadow p-3 mb-5 bg-white rounded" href="https://www.microsoft.com/en/microsoft-teams/group-chat-software" data-toggle="tooltip" data-placement="top" title="Check in with your teams">
+    <a class="navbar-brand navbar-expand" href="https://www.microsoft.com/en/microsoft-teams/group-chat-software" data-toggle="tooltip" data-placement="top" title="Check in with your teams">
       <img src="{{ url_for('static', filename='teamsLogo.png') }}" class="logo-img" style="max-width: 100px;">
     </a>
-    <a class="navbar-brand navbar-expand shadow p-3 mb-5 bg-white rounded" href="https://www.yammer.com/" target="_blank">
+    <a class="navbar-brand navbar-expand" href="https://www.yammer.com/" target="_blank">
       <img src="{{ url_for('static', filename='yammer.png') }}" class="logo-img" style="max-width: 100px;" data-toggle="tooltip" data-placement="top" title="Keep up to date with the latest feeds">
     </a>
-    <a class="navbar-brand navbar-expand shadow p-3 mb-5 bg-white rounded" href="https://open.spotify.com/" target="_blank">
+    <a class="navbar-brand navbar-expand" href="https://open.spotify.com/" target="_blank">
       <img src="{{ url_for('static', filename='spotify.png') }}" class="logo-img" style="max-width: 100px;" data-toggle="tooltip" data-placement="top" title="Some music or a podcast to help reset?">
     </a>
-    <a class="navbar-brand navbar-expand shadow p-3 mb-5 bg-white rounded" href="https://open.spotify.com/" target="_blank">
+    <a class="navbar-brand navbar-expand" href="https://open.spotify.com/" target="_blank">
       <img src="{{ url_for('static', filename='linkedin.png') }}" class="logo-img" style="max-width: 100px;" data-toggle="tooltip" data-placement="top" title="Keep your LinkedIn profile up to date">
     </a>
   </div>
 </div>
 
 
-<div class="container mt-5 border-top">
+<div class="container border-top">
   <footer class="py-5">
     <div class="row">
 
@@ -156,7 +159,7 @@
 
     <div class="row mt-4">
       <div class="col-12 col-md-8">
-        <div class="d-flex justify-content-start align-items-center border-top py-3">
+        <div class="d-flex justify-content-start border-top py-3">
           <div>
             <p>© 2023 exitCode[0] Produced as part of a training exercise. All content's original owners retain full copyright</p>
           </div>

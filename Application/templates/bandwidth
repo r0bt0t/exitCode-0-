@@ -6,30 +6,78 @@
 
 <div class="container px-4 pt-5 my-5 text-center border-bottom">
   <h1 class="display-4 fw-bold title">Bandwidth Calculator</h1>
+  <p class="lead"> Life stops when the internet goes down or isn't up to the job for your family 
+    <br> That's exactly how your customers feel so make sure you can give them the advice they need to choose the set up that's right for them </p>
 </div>
 
 <center>
-
-    <input type="number" name="custbwidth" id="bwidth">
-    <label for="bwidth">Enter customer download speed (Mbps)</label>
-
   <div class="row container align-items-center table-responsive mn-vw-100">
 
+    
+  <div class="mb-5" id="Comparison-table-BB">
+    <div>
+      <div>
+        <h6 class="title text-center display-4"> Our current BB deals </h6>
+        <h2 class="title">Sky Broadband Speeds</h2>
+        <p class="lead">
+          Faster is better when it comes to broadband speed.
+          <br>
+          Faster speeds <b class="title"> = </b> more streaming, more gaming, more video calls; all at once.
+          <br>
+          So choose the best broadband deal for you.
+        </p>
+        <div class="d-flex justify-content-center">
+          <dl class="row">
+            <dt class="col-sm-6 text-right">
+              <h5 class="title"> Superfast 35 </h5>
+            </dt>
+              <dd class="col-sm-6 text-left"> £25 a month for 18 months </dd>
+            <dt class="col-sm-6 text-right"> Average Speed</dt>
+              <dd class="col-sm-6 text-left"> <strong> 36 Mbps </strong> </dd>
+            <dt class="col-sm-6 text-right">
+              <h5 class="title"> Ultrafast </h5>
+            </dt>
+              <dd class="col-sm-6 text-left"> £30 a month for 18 months </dd>
+            <dt class="col-sm-6 text-right"> Average Speed </dt>
+              <dd class="col-sm-6 text-left"> <strong> 145 Mbps </strong> </dd>
+            <dt class="col-sm-6 text-right">
+              <h5 class="title"> Ultrafast Plus </h5>
+            </dt>
+              <dd class="col-sm-6 text-left"> £48 a month for 18 months </dd>
+            <dt class="col-sm-6 text-right"> Average Speed </dt>
+              <dd class="col-sm-6 text-left"> <strong> 500 Mbps </strong> </dd>
+            <dt class="col-sm-6 text-right">
+              <h5 class="title"> Gigafast </h5>
+            </dt>
+              <dd class="col-sm-6 text-left"> £53 a month for 18 months </dd>
+            <dt class="col-sm-6 text-right"> Average Speed </dt>
+              <dd class="col-sm-6 text-left"> <strong> 900 Mbps </strong> </dd>
+          </dl>
+        </div>
+          <p>
+            18 month minimum term. 
+            <br> 
+            Includes Sky Talk Pay As You Go. 
+            <br> 
+            Phone services for Gigafast are provided via Internet Calls. 
+            <br> 
+            Standard prices may vary. £19.95 set-up. Availability to UK homes: Ultrafast 41%, Ultrafast Plus and Gigafast 35%.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <h4 class="display-5 mb-5 title">Try out the handy table below to see exactly what bandwith is needed for different jobs</h4>
     <table class="table table-striped table-bordered table-hover">
-
       <thead class="thead-dark">
-
         <tr class="text-center">
           <th class="text-center">Item</th>
           <th class="text-center">Quantity</th>
           <th class="text-center">B/width Min</th>
           <th class="text-center">Recommended B/width</th>
         </tr>
-
-      </thead>
-
+       </thead>
       <tbody>
-
         <tr class="bw-calculation-row">
           <td id="item" class="text-center"> 
             <b> 
@@ -170,160 +218,75 @@
       </tbody>
 
     </table>
-
-    <script>
-      function calculateBandwidth() {
-        var row = this.closest(".bw-calculation-row");
-        var item = row.querySelector("select").value;
-        var quantity = row.querySelector("input[type=number]").value;
-    
-        var minBw = 0;
-        var recBw = 0;
-        switch (item) {
-          case "1":
-            minBw = 15;
-            recBw = 25;
-            break;
-          case "2":
-            minBw = 25;
-            recBw = 35;
-            break;
-          case "3":
-            minBw = 5;
-            recBw = 10;
-            break;
-          case "4":
-            minBw = 15;
-            recBw = 25;
-            break;
-          case "5":
-            minBw = 10;
-            recBw = 20;
-            break;
-          case "6":
-            minBw = 5;
-            recBw = 10;
-            break;
-          case "7":
-            minBw = 3;
-            recBw = 10;
-            break;
-        }
-    
-        row.querySelector("#minbw").textContent = minBw * quantity + " Mbps";
-        row.querySelector("#recbw").textContent = recBw * quantity + " Mbps";
-      }
-    
-      var rows = document.querySelectorAll(".bw-calculation-row");
-      for (var i = 0; i < rows.length; i++) {
-        var inputs = rows[i].querySelectorAll("input");
-        for (var j = 0; j < inputs.length; j++) {
-          inputs[j].addEventListener("input", calculateBandwidth);
-        }
-      }
-    </script>
-    
-
-
-    <div class="progress">
-  
-      <div class="progress-bar" role="progressbar" style="width: 15%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
-      <div class="progress-bar bg-success" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
-      <div class="progress-bar bg-info" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-      <!-- Alternative progress bar-->
-      <div class="progress">
-        <div
-          class="progress-bar"
-          role="progressbar"
-          style="width: 15%;"
-          aria-valuenow="15"
-          aria-valuemin="0"
-          aria-valuemax="100"
-        ></div>
-        <div
-          class="progress-bar bg-success"
-          role="progressbar"
-          style="width: 30%;"
-          aria-valuenow="30"
-          aria-valuemin="0"
-          aria-valuemax="100"
-        ></div>
-        <div
-          class="progress-bar bg-info"
-          role="progressbar"
-          style="width: 20%;"
-          aria-valuenow="20"
-          aria-valuemin="0"
-          aria-valuemax="100"
-        ></div>
-      </div>
-  
+    <div class="progress" style="height:4vh; border: 1px solid rgb(33, 66, 156)">
+      <div class="progress-bar" role="progressbar" style="width: 15%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" id="mob">Mobile(s)</div>
+      <div class="progress-bar bg-success" role="progressbar" style="width: 130%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" id="ps">Playstation</div>
+      <div class="progress-bar bg-warning" role="progressbar" style="width: 25%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" id="xbox">Xbox</div> 
+      <div class="progress-bar bg-danger" role="progressbar" style="width: 13%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" id="glass">Sky Glass</div> 
+      <div class="progress-bar bg-dark" role="progressbar" style="width: 17%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" id="netflix">Netflix</div> 
+      <div class="progress-bar bg-secondary" role="progressbar" style="width: 23%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" id="laptop">Laptop</div> 
+      <div class="progress-bar bg-primary" role="progressbar" style="width: 20%" aria-valuenow="5" aria-valuemin="0" aria-valuemax="100" id="puck">Puck</div> 
     </div>
-    <br>
-    <table class="table table-striped table-bordered table-hover">
-        <thead class="thead-dark">
-            <tr class="text-center">
-                <th class="text-center"> Total Bandwidth </th>
-                <th class="text-center"> Used Bandwidth </th>
-            </tr>
-
-            <tr class="text-center">
-                <td class="text-center"> {{ "custbwidth" }} </td>
-                <td class="text-center">  </td>
-            </tr>
-        </thead>
-    </table> 
-
   </div>
 
-  <div id="Comparison-table-BB">
-    <div>
-      <div>
-        <h2 class="title">Sky Broadband Speeds</h2>
-        <p class="lead">
-          Faster is better when it comes to broadband speed.
-          <br>
-          Faster speeds <b class="title"> = </b> more streaming, more gaming, more video calls; all at once.
-          <br>
-          So choose the best broadband deal for you.
-        </p>
-        <div class="d-flex justify-content-center">
-          <dl class="row">
-            <dt class="col-sm-6 text-right">
-              <h5 class="title"> Superfast 35 </h5>
-            </dt>
-              <dd class="col-sm-6 text-left"> £25 a month for 18 months </dd>
-            <dt class="col-sm-6 text-right"> Average Speed</dt>
-              <dd class="col-sm-6 text-left"> <strong> 36 Mbps </strong> </dd>
-            <dt class="col-sm-6 text-right">
-              <h5 class="title"> Ultrafast </h5>
-            </dt>
-              <dd class="col-sm-6 text-left"> £30 a month for 18 months </dd>
-            <dt class="col-sm-6 text-right"> Average Speed </dt>
-              <dd class="col-sm-6 text-left"> <strong> 145 Mbps </strong> </dd>
-            <dt class="col-sm-6 text-right">
-              <h5 class="title"> Ultrafast Plus </h5>
-            </dt>
-              <dd class="col-sm-6 text-left"> £48 a month for 18 months </dd>
-            <dt class="col-sm-6 text-right"> Average Speed </dt>
-              <dd class="col-sm-6 text-left"> <strong> 500 Mbps </strong> </dd>
-            <dt class="col-sm-6 text-right">
-              <h5 class="title"> Gigafast </h5>
-            </dt>
-              <dd class="col-sm-6 text-left"> £53 a month for 18 months </dd>
-            <dt class="col-sm-6 text-right"> Average Speed </dt>
-              <dd class="col-sm-6 text-left"> <strong> 900 Mbps </strong> </dd>
-          </dl>
-        </div>
-          <p>
-            18 month minimum term. 
-            <br> 
-            Includes Sky Talk Pay As You Go. 
-            <br> 
-            Phone services for Gigafast are provided via Internet Calls. 
-            <br> 
-            Standard prices may vary. £19.95 set-up. Availability to UK homes: Ultrafast 41%, Ultrafast Plus and Gigafast 35%.&ZeroWidthSpace;&ZeroWidthSpace;</p>
-
 </center>
+
+{% endblock %}
+
+{% block scripts %}
+
+<script>
+
+function calculateBandwidth() {
+  var row = this.closest(".bw-calculation-row");
+  var item = row.querySelector("select").value;
+  var quantity = row.querySelector("input[type=number]").value;
+
+  var minBw = 0;
+  var recBw = 0;
+  switch (item) {
+    case "1":
+      minBw = 15;
+      recBw = 25;
+      break;
+    case "2":
+      minBw = 25;
+      recBw = 35;
+      break;
+    case "3":
+      minBw = 5;
+      recBw = 10;
+      break;
+    case "4":
+      minBw = 15;
+      recBw = 25;
+      break;
+    case "5":
+      minBw = 10;
+      recBw = 20;
+      break;
+    case "6":
+      minBw = 5;
+      recBw = 10;
+      break;
+    case "7":
+      minBw = 3;
+      recBw = 10;
+      break;
+  }
+
+  row.querySelector("#minbw").textContent = minBw * quantity + " Mbps";
+  row.querySelector("#recbw").textContent = recBw * quantity + " Mbps";
+}
+
+var rows = document.querySelectorAll(".bw-calculation-row");
+for (var i = 0; i < rows.length; i++) {
+  var inputs = rows[i].querySelectorAll("input");
+  for (var j = 0; j < inputs.length; j++) {
+    inputs[j].addEventListener("input", calculateBandwidth);
+  }
+}
+
+</script>
 
 {% endblock %}

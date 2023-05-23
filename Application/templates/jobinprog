@@ -6,7 +6,7 @@
  
     {% block content %}
 
-    <div class="px-4 pt-5 my-5 text-center border-bottom">
+    <div class="container px-4 pt-5 my-5 text-center border-bottom">
 
         {% for job in this_job %}
 

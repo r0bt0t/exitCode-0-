@@ -28,7 +28,7 @@ class SignupForm(FlaskForm):
         validators.Length(min=8, message="Password must be at least 8 characters long"),
         validators.Regexp(regex=".*[A-Z].*", message="Password must contain at least one uppercase letter"),
         validators.Regexp(regex=".*\d.*", message="Password must contain at least one digit"),
-        validators.Regexp(regex=".*[!@#$%^&*()].*", message="Password must contain at least one special character")
+        validators.Regexp(regex=".*[!@#$%^&*()£+].*", message="Password must contain at least one special character")
     ])
 
 def format_date(date):

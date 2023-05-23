@@ -7,14 +7,21 @@
 <div class="container col-xxl-8 px-4 py-5 mb-5">
   <div class="row align-items-center g-5 py-5">
     <div class="col-lg-6">
-      <h1 class="display-3 fw-bold text-body-emphasis lh-1 mb-3 title upper">Welcome back {{name}} {{ user }} {{ user_id }}</h1>
-      <p class="lead">Your jobs for the day are ready when you are.<br>Click the link below to get started</p>
+      <h1 class="display-3 fw-bold text-body-emphasis lh-1 mb-3 title upper">Welcome back {{name}}</h1>
+      <p class="lead fw-bold">Your jobs for the day are ready when you are.<br>Click the link below to get started</p>
 
-      <button type="button" class="btn btn-outline-primary btn-lg me-md-2 px-4 gappedR text-nowrap">
-        <a href="/jobsummary/{today()}">GO TO JOBS</a>
+      <button type="button" class="btn btn-outline-primary btn-lg me-md-2 px-4 gappedR gappedT text-nowrap">
+        <a href="/jobsummary/{today()}"> JOBS </a>
       </button>
 
-      <p class="lead gappedT">Alternatively spend some time catching up on your networks</p>
+      <button type="button" class="btn btn-outline-info btn-lg me-md-2 px-4 gappedL gappedT text-nowrap">
+        <a href="/showcase">SHOWCASE</a>
+      </button>
+
+      <button type="button" class="btn btn-outline-info btn-lg me-md-2 px-4 gappedT text-nowrap">
+        <a href="/bandwidth">BANDWIDTH CALCULATOR</a>
+      </button>
+
     </div>
 
     <div class="col-lg-6 text-lg-end">
