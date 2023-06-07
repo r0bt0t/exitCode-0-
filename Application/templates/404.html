@@ -29,29 +29,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
 <!--Links to project specific sheets-->
 <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
-<!--Bootstrap datepicker CSS-->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
-<style>
-  .logo {
-    position: absolute;
-    top: 100px;
-    left: 450px;
-    width: 100px; /* Adjust the width as needed */
-    height: auto;
-    transform:scale(200%)
-  }
-  </style>
+
   
 </head>
 
 <header>
-
-
-        <div class="d-flex align-items-center">
-          <a class="navbar-brand mr-2">
-            <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="logo">
-          </a>
-        </div>
 
 </header>
 
@@ -59,14 +41,14 @@
 
 <main>
 
-  <section class="vh-100">
+  <section class="container vh-100">
 
     <div class="container col-xxl-8 px-4 py-5 mb-5">
         <div class="row align-items-center g-5 py-5">
             <div class="col-lg-6">
-                <h1 class="display-1 fw-bold text-body-emphasis lh-1 mb-3 title"> ERROR 404 </h1>
-                <h1 class="display-4 fw-bold text-body-emphasis lh-1 mb-3 title"> SORRY WE COULDN'T FIND YOUR PAGE </h1>
-                <h4 class="display-6 fw-bold text-body-emphasis lh-1 mb-3 title"> (OR THE DEVELOPERS MIGHT NOT HAVE MADE IT YET OF COURSE) </h4>
+                <h3 class="display-1 fw-bold text-body-emphasis lh-1 mb-3 title"> ERROR 404 </h3>
+                <h3 class="display-4 fw-bold text-body-emphasis lh-1 mb-3 title"> SORRY WE COULDN'T FIND YOUR PAGE </h3>
+                <h3 class="display-6 lh-1 mb-3 title"> (OR THE DEVELOPERS MIGHT NOT HAVE MADE IT YET OF COURSE) </h3>
                 <a href="{{ url_for('landingPage') }}"> <h5 class="display-4 title"> <i class="bi bi-house-exclamation-fill"></i> GO BACK </h5> </a>
             </div>
             <div class="col-lg-6">

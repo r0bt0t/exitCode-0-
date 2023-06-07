@@ -42,7 +42,7 @@
         {% for message in messages %}
         <div class="container col-lg-6 mt-3" style="width:30%">
           <div class="row d-flex" role="alert">
-            <span class="title display-6 text-uppercase text-center font-weight-bold"> {{ message }} </span>
+            <span class="display-6 text-uppercase text-center font-weight-bold"> {{ message }} </span>
           </div>
         </div>
         {% endfor %}

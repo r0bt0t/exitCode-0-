@@ -4,23 +4,29 @@
 
 {% block content %}
 
-<div class="container col-xxl-8 px-4 py-5 mb-5">
-  <div class="row align-items-center g-5 py-5">
+<div class="container col-xxl-8 px-4 py-5 mb-5 mt-5 mn-vw-100">
+  <div class="row align-items-left g-5 py-5">
     <div class="col-lg-6">
-      <h1 class="display-3 fw-bold text-body-emphasis lh-1 mb-3 title upper">Welcome back {{name}}</h1>
+      <h1 class="display-3 fw-bold text-body-emphasis lh-1 mb-3 title">Welcome back {{name}}</h1>
       <p class="lead fw-bold">Your jobs for the day are ready when you are.<br>Click the link below to get started</p>
 
-      <button type="button" class="btn btn-outline-primary btn-lg me-md-2 px-4 gappedR gappedT text-nowrap">
+      <div class="container lh-1">
+      <button type="button" class="btn btn-outline-primary btn-lg me-md-2 px-4 gappedR gappedT text-nowrap" data-toggle="tooltip" data-placement="top" title="Let's get cracking">
         <a href="/jobsummary/{today()}"> JOBS </a>
       </button>
+      </div>
 
-      <button type="button" class="btn btn-outline-info btn-lg me-md-2 px-4 gappedL gappedT text-nowrap">
+      <div class="container">
+      <button type="button" class="btn btn-outline-info btn-lg me-md-2 px-4 gappedT text-nowrap" data-toggle="tooltip" data-placement="top" title="See some of the amazing products we offer">
         <a href="/showcase">SHOWCASE</a>
       </button>
+      </div>
 
-      <button type="button" class="btn btn-outline-info btn-lg me-md-2 px-4 gappedT text-nowrap">
+      <div class="container mb-5">
+      <button type="button" class="btn btn-outline-danger btn-lg me-md-2 px-4 gappedT text-nowrap" data-toggle="tooltip" data-placement="top" title="Check out what your internet can really do">
         <a href="/bandwidth">BANDWIDTH CALCULATOR</a>
       </button>
+      </div>
 
     </div>
 

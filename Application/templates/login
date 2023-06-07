@@ -42,7 +42,7 @@
         {% for message in messages %}
         <div class="container col-lg-6 mt-3" style="width:30%">
           <div class="row d-flex" role="alert">
-            <span class="title display-5 text-uppercase text-center font-weight-bold"> {{ message }} </span>
+            <span class="display-5 text-uppercase text-center font-weight-bold" style="color:black"> {{ message }} </span>
           </div>
         </div>
         {% endfor %}
@@ -94,7 +94,7 @@
                           style="
                           background-color:rgb(0, 15, 245);
                           " data-toggle="tooltip" data-placement="top" title="Click to log in to your account">
-                            Login
+                          Login
                           </button>
                         </div>
                         <a class="small text-muted" href="#!">Forgot password?</a>
